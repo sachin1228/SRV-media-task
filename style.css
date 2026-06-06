@@ -64,7 +64,7 @@ body {
 .register-btn{
   height: 36px;
   position:relative;
-  border:2px solid #081b57;
+  border:1px solid #081b57;
   border-radius:4px;
   overflow:hidden;
   display:flex;
@@ -78,7 +78,7 @@ body {
   content:"";
   position:absolute;
   inset:0;
-  background:#081b57;
+  background:#5C2592;
   transform:scaleX(0);
   transform-origin:left;
   transition:transform .55s ease;
@@ -93,7 +93,7 @@ body {
 .icon-box{
   width: 36px;
   height: 100%;
-  background:#081b57;
+  background: linear-gradient( 90deg,#030E3B 0%,#1A1450 25%,#32176A 55%,#4B1D7E 75%,#5C2592 100%);
   display:flex;
   justify-content:center;
   align-items:center;
