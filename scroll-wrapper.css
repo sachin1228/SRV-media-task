@@ -33,6 +33,31 @@
 
 .col-track { will-change: transform; }
 
+/* Desktop: CSS-only infinite vertical scroll */
+@media (min-width: 769px) {
+    .col-track {
+        animation: scroll-up 18s linear infinite;
+    }
+
+    .col-track.track-1 { animation-duration: 16s; }
+    .col-track.track-2 { animation-duration: 18s; animation-direction: reverse; }
+    .col-track.track-3 { animation-duration: 20s; }
+
+    @keyframes scroll-up {
+        from { transform: translateY(0); }
+        to { transform: translateY(-50%); }
+    }
+
+    /* pause on hover so users can inspect */
+    .scroll-col:hover .col-track { animation-play-state: paused; }
+
+    /* Respect reduced motion */
+    @media (prefers-reduced-motion: reduce) {
+        .col-track { animation: none !important; transform: none !important; }
+        .scroll-col { overflow: auto; }
+    }
+}
+
 @media (max-width: 768px) {
     .scroll-wrapper {
         display: none;
