@@ -61,16 +61,81 @@ body {
     font-weight: bold;
 }
 
-.register-btn {
-    padding: 10px 20px;
-    background-color: #fff;
-    color: #000;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 16px;
-    height: 60px;
-    background: linear-gradient( 90deg,#030E3B 0%,#1A1450 25%,#32176A 55%,#4B1D7E 75%,#5C2592 100%);
+.register-btn{
+  height: 36px;
+  position:relative;
+  border:2px solid #081b57;
+  border-radius:4px;
+  overflow:hidden;
+  display:flex;
+  align-items:center;
+  text-decoration:none;
+  background:#fff;
+}
+
+/* Indigo fill animation */
+.register-btn::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:#081b57;
+  transform:scaleX(0);
+  transform-origin:left;
+  transition:transform .55s ease;
+  z-index:0;
+}
+
+.register-btn:hover::before{
+  transform:scaleX(1);
+}
+
+/* Left indigo section */
+.icon-box{
+  width: 36px;
+  height: 100%;
+  background:#081b57;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  position:relative;
+  z-index:2;
+  flex-shrink:0;
+}
+
+/* SVG Arrow */
+.arrow{
+  width:12px;
+  height:12px;
+  color:white;
+  transform:rotate(0deg);
+  transition:transform .45s ease;
+  transform-origin:center;
+}
+
+/* ↗ to → */
+.register-btn:hover .arrow{
+  transform:rotate(45deg);
+}
+
+/* Text */
+.text{
+  flex:1;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  padding:0 12px;
+  font-size: 12px;
+  font-weight: 600;
+  height: 100%;
+  letter-spacing:.5px;
+  color:#081b57;
+  position:relative;
+  z-index:2;
+  transition:color .3s ease;
+}
+
+.register-btn:hover .text{
+  color:white;
 }
 
 .home-bg {
