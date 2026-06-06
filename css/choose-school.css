@@ -52,6 +52,9 @@
     justify-content: center;
     gap: 12px;
     margin-top: 16px;
+    padding: 10px 12px;
+    border-radius: 999px;
+    background: rgba(63, 24, 106, 0.05);
 }
 
 .choose-school__dot {
@@ -59,13 +62,17 @@
     height: 12px;
     border-radius: 9999px;
     display: inline-block;
-    background: rgba(255, 255, 255, 0.35);
-    transition: background 0.3s ease;
+    background: rgba(63, 24, 106, 0.17);
+    border: 1px solid rgba(63, 24, 106, 0.25);
+    transition: transform 0.2s ease, background 0.3s ease, border-color 0.3s ease;
 }
 
 .choose-school__dot:hover,
-.choose-school__dot:focus-visible {
-    background: red;
+.choose-school__dot:focus-visible,
+.choose-school__dot[aria-current="true"] {
+    background: #3F186A;
+    border-color: #3F186A;
+    transform: scale(1.15);
 }
 
 .choose-school__slider {

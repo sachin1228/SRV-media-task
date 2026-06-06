@@ -394,7 +394,7 @@
                 </div>
 
                 <div class="choose-school__pagination" aria-label="Choose the school pagination">
-                    <a href="#choose-school-slide-1" class="choose-school__dot" aria-label="View slide 1"></a>
+                    <a href="#choose-school-slide-1" class="choose-school__dot" aria-current="true" aria-label="View slide 1"></a>
                     <a href="#choose-school-slide-2" class="choose-school__dot" aria-label="View slide 2"></a>
                     <a href="#choose-school-slide-3" class="choose-school__dot" aria-label="View slide 3"></a>
                     <a href="#choose-school-slide-4" class="choose-school__dot" aria-label="View slide 4"></a>
@@ -402,5 +402,36 @@
             </div>
         </section>
     </main>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const slider = document.querySelector('.choose-school__slider');
+            const slides = Array.from(slider ? slider.querySelectorAll('.choose-school__card') : []);
+            const dots = Array.from(document.querySelectorAll('.choose-school__dot'));
+            if (!slider || !slides.length || !dots.length) return;
+
+            const updateCurrentDot = (id) => {
+                dots.forEach(dot => {
+                    if (dot.getAttribute('href') === `#${id}`) {
+                        dot.setAttribute('aria-current', 'true');
+                    } else {
+                        dot.removeAttribute('aria-current');
+                    }
+                });
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting && entry.intersectionRatio >= 0.55) {
+                        updateCurrentDot(entry.target.id);
+                    }
+                });
+            }, {
+                root: slider,
+                threshold: [0.55]
+            });
+
+            slides.forEach(slide => observer.observe(slide));
+        });
+    </script>
 </body>
 </html>
