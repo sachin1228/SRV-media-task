@@ -220,6 +220,43 @@ body {
     text-transform: uppercase;
 }
 
+.address-pill-container {
+    background: linear-gradient(90deg, #FFCC81 0%, #E9C79F 100%);
+    border-radius: 9999px;
+    padding: 2px;
+}
+
+.address-content-box {
+    border: 1px solid #00000021;
+    padding: 4px;
+    border-radius: 9999px;
+    
+}
+.address-content {
+    display: flex;
+    justify-content: center;
+    padding: 10px 8px;
+}
+
+.address-title {
+    color: #3F186A;
+    font-weight: 700;
+    font-size: 16px;
+    text-align: center;
+}
+
+.timing-box {
+    border-left: 1px solid #00000021;
+    margin-left: 8px;
+    padding-left: 8px;
+}
+
+.address-details {
+    color: #000E38;
+    font-size: 12px;
+    text-align: center;
+}
+
 @media (max-width: 768px) {
 
     .home-content {
