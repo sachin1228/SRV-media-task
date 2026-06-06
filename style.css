@@ -219,20 +219,28 @@ body {
     .mobile-carousel-container {
         display: flex;
         width: 100%;
+        overflow: hidden;
+        padding: 16px 0;
     }
 
     .mobile-carousel-track {
         display: flex;
         gap: 12px;
-        width: 100%;
+        width: max-content;
         border-radius: 12px;
-        overflow: hidden;
+        align-items: center;
+        will-change: transform;
     }
 
+    .mobile-carousel-item {
+        flex: 0 0 auto;
+    }
 
     .mobile-carousel-item img {
         width: 140px;
         display: block;
+        height: auto;
+        border-radius: 16px;
     }
 
 }
