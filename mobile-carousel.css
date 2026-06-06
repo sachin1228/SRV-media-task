@@ -1,0 +1,64 @@
+/* Mobile Horizontal Carousel - Separate styles for mobile only */
+
+/* Hide on desktop */
+@media (min-width: 769px) {
+    .mobile-carousel-container {
+        display: none;
+    }
+}
+
+/* Show on mobile */
+@media (max-width: 768px) {
+
+    .mobile-carousel-container {
+        display: flex;
+        width: 100%;
+        overflow: hidden;
+    }
+
+    .mobile-carousel-track {
+        display: flex;
+        gap: 12px;
+        width: max-content;
+        border-radius: 12px;
+        align-items: center;
+        will-change: transform;
+        animation: scroll-left 20s linear infinite;
+    }
+
+    @keyframes scroll-left {
+        from { transform: translateX(0); }
+        to { transform: translateX(-50%); }
+    }
+
+    /* pause on interaction so user can swipe */
+    .mobile-carousel-container:hover .mobile-carousel-track,
+    .mobile-carousel-container:active .mobile-carousel-track {
+        animation-play-state: paused;
+    }
+
+    .mobile-carousel-item {
+        flex: 0 0 auto;
+    }
+
+    .mobile-carousel-item img {
+        width: 140px;
+        display: block;
+        height: auto;
+        border-radius: 16px;
+    }
+
+    /* Respect users who prefer reduced motion */
+    @media (prefers-reduced-motion: reduce) {
+        .mobile-carousel-track {
+            animation: none !important;
+            transform: none !important;
+        }
+
+        /* allow manual swipe when animations are disabled */
+        .mobile-carousel-container {
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+        }
+    }
+}
