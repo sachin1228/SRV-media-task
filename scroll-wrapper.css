@@ -31,17 +31,6 @@
     border-radius: 20px;
 }
 
-/* Duplicate set scroll: translateY(-50%) moves one set height (since items duplicated) */
-@keyframes scroll-up {
-    0% { transform: translateY(0); }
-    100% { transform: translateY(-50%); }
-}
-
-.track-1 { animation: scroll-up 14s linear infinite; }
-.track-2 { animation: scroll-up 18s linear infinite; }
-.track-3 { animation: scroll-up 16s linear infinite; }
-
-/* Ensure track height is twice the original content so -50% equals one cycle */
 .col-track { will-change: transform; }
 
 @media (max-width: 768px) {
