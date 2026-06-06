@@ -255,17 +255,6 @@
     color: #ffffff;
 }
 
-.enquiry-form__button-text {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    padding: 0 12px;
-    font-size: 12px;
-    font-weight: 400;
-    height: 100%;
-    color: #fff;
-    background: transparent;
-}
 
 .enquiry-form__submit:hover .enquiry-form__button-text {
     color: #000;
@@ -303,6 +292,20 @@
     transform: rotate(45deg);
 }
 
+.enquiry-form__button-text {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 12px;
+    font-size: 12px;
+    font-weight: 400;
+    height: 100%;
+    color: #fff;
+}
+
+.enquiry-form__submit:hover .enquiry-form__button-text {
+    color: #000;
+}
 
 
 
