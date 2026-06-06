@@ -196,11 +196,11 @@
 .enquiry-form__input {
     width: 100%;
     padding: 10px 12px;
-    border-radius: 6px;
+    border-radius: 4px;
     border: 1px solid transparent;
     background: rgba(255,255,255,0.04);
     color: #ffffff;
-    font-size: 14px;
+    font-size: 12px;
 }
 
 .enquiry-form__input::placeholder {
