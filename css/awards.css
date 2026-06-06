@@ -1,14 +1,20 @@
-.awards-section {
+.awards {
     padding: 32px 20px;
     margin: 20px auto;
     max-width: 64rem;
 }
 
-.awards-wrapper {
+.awards__grid {
     display: grid;
     grid-template-columns: repeat(4, minmax(0, 1fr));
     gap: 32px;
     justify-items: center;
+    align-items: center;
+}
+
+.awards__item {
+    display: flex;
+    justify-content: center;
     align-items: center;
 }
 
@@ -21,7 +27,7 @@
 }
 
 @media (max-width: 768px) {
-    .awards-wrapper {
+    .awards__grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 }
