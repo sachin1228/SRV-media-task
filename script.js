@@ -1,6 +1,7 @@
 // Infinite scroll loop - smooth continuous animation
 
 document.addEventListener('DOMContentLoaded', function() {
+    // Desktop vertical carousel
     const tracks = document.querySelectorAll('.col-track');
     const animationDurations = [14, 18, 16];
 
@@ -38,31 +39,40 @@ document.addEventListener('DOMContentLoaded', function() {
         animate();
     });
 
+    // Mobile horizontal carousel - using same pattern as desktop
     const mobileTrack = document.querySelector('.mobile-carousel-track');
     if (mobileTrack) {
         const items = Array.from(mobileTrack.querySelectorAll('.mobile-carousel-item'));
+        
         if (items.length) {
+            // Clone items to create seamless loop
             items.forEach(item => {
                 const clone = item.cloneNode(true);
                 mobileTrack.appendChild(clone);
             });
 
-            const trackWidth = mobileTrack.scrollWidth / 2;
-            const speed = 60; // pixels per second; adjust for faster/slower scroll
-            let startTime = null;
+            const itemWidth = 140; // Width of each carousel item (from CSS)
+            const gap = 12; // Gap between items
+            const itemTotalWidth = itemWidth + gap;
+            const totalWidth = items.length * itemTotalWidth;
+            const speed = 80; // pixels per second
+            let scrollPosition = 0;
+            let startTime = Date.now();
 
-            function animateMobile(timestamp) {
-                if (startTime === null) {
-                    startTime = timestamp;
+            function animateMobile() {
+                const currentTime = Date.now();
+                const elapsed = (currentTime - startTime) / 1000; // Convert to seconds
+                scrollPosition = (elapsed * speed) % (totalWidth * 2); // Loop through doubled width
+
+                if (scrollPosition >= totalWidth) {
+                    scrollPosition = scrollPosition - totalWidth;
                 }
 
-                const elapsed = (timestamp - startTime) / 1000;
-                const distance = (elapsed * speed) % trackWidth;
-                mobileTrack.style.transform = `translateX(-${distance}px)`;
+                mobileTrack.style.transform = `translateX(-${scrollPosition}px)`;
                 requestAnimationFrame(animateMobile);
             }
 
-            requestAnimationFrame(animateMobile);
+            animateMobile();
         }
     }
 });

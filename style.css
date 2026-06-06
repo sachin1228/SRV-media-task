@@ -220,7 +220,6 @@ body {
         display: flex;
         width: 100%;
         overflow: hidden;
-        padding: 16px 0;
     }
 
     .mobile-carousel-track {
