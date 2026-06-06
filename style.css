@@ -95,7 +95,6 @@ body {
 .home-content {
     display: flex;
     flex-direction: row;
-    align-items: center;
     height: 100%;
     color: #fff;
     text-align: left;
@@ -118,6 +117,52 @@ body {
     padding: 0;
     text-align: center;
 }
+
+/* Vertical auto-scrolling columns */
+.scroll-wrapper {
+    display: flex;
+    gap: 16px;
+    width: 100%;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 0 20px;
+}
+
+.scroll-col {
+    flex: 0 0 30%;
+    max-width: 30%;
+    height: 472px;
+    overflow: hidden;
+    position: relative;
+}
+
+.col-track {
+    display: flex;
+    flex-direction: column;
+}
+
+.col-track img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+
+    display: block;
+    margin-bottom: 12px;
+    border-radius: 20px;
+}
+
+/* Duplicate set scroll: translateY(-50%) moves one set height (since items duplicated) */
+@keyframes scroll-up {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(-50%); }
+}
+
+.track-1 { animation: scroll-up 14s linear infinite; }
+.track-2 { animation: scroll-up 18s linear infinite; }
+.track-3 { animation: scroll-up 16s linear infinite; }
+
+/* Ensure track height is twice the original content so -50% equals one cycle */
+.col-track { will-change: transform; }
 
 .right-side {
     order: 3;
@@ -199,5 +244,20 @@ body {
 
     .right-side {
         display: none;
+    }
+
+    .scroll-wrapper {
+        padding: 0;
+        gap: 12px;
+    }
+
+    .scroll-col {
+        flex: 0 0 100%;
+        max-width: 100%;
+        height: 280px;
+    }
+
+    .col-track img {
+        height: 160px;
     }
 }
