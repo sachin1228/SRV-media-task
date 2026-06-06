@@ -1,5 +1,5 @@
 /* Vertical auto-scrolling columns */
-.scroll-wrapper {
+.home__slider {
     display: flex;
     gap: 16px;
     width: 100%;
@@ -8,7 +8,7 @@
     padding: 0 20px;
 }
 
-.scroll-col {
+.home__slider-column {
     flex: 0 0 30%;
     max-width: 30%;
     height: 472px;
@@ -16,12 +16,12 @@
     position: relative;
 }
 
-.col-track {
+.home__slider-track {
     display: flex;
     flex-direction: column;
 }
 
-.col-track img {
+.home__slider-track img {
     width: 100%;
     height: 200px;
     object-fit: cover;
@@ -31,17 +31,17 @@
     border-radius: 20px;
 }
 
-.col-track { will-change: transform; }
+.home__slider-track { will-change: transform; }
 
 /* Desktop: CSS-only infinite vertical scroll */
 @media (min-width: 769px) {
-    .col-track {
+    .home__slider-track {
         animation: scroll-up 18s linear infinite;
     }
 
-    .col-track.track-1 { animation-duration: 16s; }
-    .col-track.track-2 { animation-duration: 18s; }
-    .col-track.track-3 { animation-duration: 20s; }
+    .home__slider-track.home__slider-track--one { animation-duration: 16s; }
+    .home__slider-track.home__slider-track--two { animation-duration: 18s; }
+    .home__slider-track.home__slider-track--three { animation-duration: 20s; }
 
     @keyframes scroll-up {
         from { transform: translateY(0); }
@@ -49,29 +49,29 @@
     }
 
     /* pause on hover so users can inspect */
-    .scroll-col:hover .col-track { animation-play-state: paused; }
+    .home__slider-column:hover .home__slider-track { animation-play-state: paused; }
 
     /* Respect reduced motion */
     @media (prefers-reduced-motion: reduce) {
-        .col-track { animation: none !important; transform: none !important; }
-        .scroll-col { overflow: auto; }
+        .home__slider-track { animation: none !important; transform: none !important; }
+        .home__slider-column { overflow: auto; }
     }
 }
 
 @media (max-width: 768px) {
-    .scroll-wrapper {
+    .home__slider {
         display: none;
         padding: 0;
         gap: 12px;
     }
 
-    .scroll-col {
+    .home__slider-column {
         flex: 0 0 100%;
         max-width: 100%;
         height: 280px;
     }
 
-    .col-track img {
+    .home__slider-track img {
         height: 140px;
     }
 }

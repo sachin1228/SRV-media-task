@@ -11,7 +11,8 @@
     <link rel="stylesheet" href="css/mobile-carousel.css">
 </head>
 <body>
-    <main>
+    <main id="home-main">
+        <a href="#home-main" class="sr-only skip-link">Skip to main content</a>
         <nav class="navbar" role="navigation" aria-label="Primary navigation">
             <div class="navbar__brand">
                 <img class="navbar__logo" src="images/logo.png" alt="GitHub Logo">
@@ -36,33 +37,33 @@
                 </div>
             </a>
         </nav>
-        <div class="home-bg">
-            <div class="home-content">
-                <div class="left-side">
-                    <div class="heading-group">
-                        <h1 class="heading heading-line1">Discover Gurugram's</h1>
-                        <h1 class="heading heading-line2">Top 30+ schools</h1>
+        <div class="home">
+            <div class="home__content">
+                <div class="home__column home__column--intro">
+                    <div class="home__headings">
+                        <h1 class="home__heading home__heading--intro">Discover Gurugram's</h1>
+                        <h1 class="home__heading home__heading--headline">Top 30+ schools</h1>
                     </div>
-                    <p class="subheading">All In One Place</p>
-                    <div class="address-pill-container">
-                        <div class="address-content-box">
-                            <div class="address-content">
+                    <p class="home__tagline">All In One Place</p>
+                    <div class="home__address-pill">
+                        <div class="home__address-card">
+                            <div class="home__address-list">
                                 <div>
-                                    <div class="address-title">Apparel House, </div>
-                                    <div class="address-details">sec 44, Gurugram</div>
+                                    <div class="home__address-label">Apparel House, </div>
+                                    <div class="home__address-value">sec 44, Gurugram</div>
                                 </div>
-                                <div class="timing-box">
-                                    <div class="address-title">2-3 August 2024, </div>
-                                    <div class="address-details">sat-sun 10am-6pm</div>
+                                <div class="home__address-meta">
+                                    <div class="home__address-label">2-3 August 2024, </div>
+                                    <div class="home__address-value">sat-sun 10am-6pm</div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="middle-side">
-                    <div class="scroll-wrapper">
-                        <div class="scroll-col">
-                            <div class="col-track track-1">
+                <div class="home__column home__column--gallery">
+                    <div class="home__slider" role="region" aria-roledescription="carousel" aria-label="Featured school showcase" tabindex="0">
+                        <div class="home__slider-column">
+                            <div class="home__slider-track home__slider-track--one">
                                 <img src="images/scroll-vertical-images/Mask%20group%20(1).png" alt="img1">
                                 <img src="images/scroll-vertical-images/Mask%20group%20(2).png" alt="img2">
                                 <img src="images/scroll-vertical-images/Mask%20group%20(3).png" alt="img3">
@@ -75,8 +76,8 @@
                             </div>
                         </div>
 
-                        <div class="scroll-col">
-                            <div class="col-track track-2">
+                        <div class="home__slider-column">
+                            <div class="home__slider-track home__slider-track--two">
                                 <img src="images/scroll-vertical-images/Mask%20group%20(2).png" alt="img2">
                                 <img src="images/scroll-vertical-images/Mask%20group%20(3).png" alt="img3">
                                 <img src="images/scroll-vertical-images/Mask%20group%20(4).png" alt="img4">
@@ -89,8 +90,8 @@
                             </div>
                         </div>
 
-                        <div class="scroll-col">
-                            <div class="col-track track-3">
+                        <div class="home__slider-column">
+                            <div class="home__slider-track home__slider-track--three">
                                 <img src="images/scroll-vertical-images/Mask%20group%20(3).png" alt="img3">
                                 <img src="images/scroll-vertical-images/Mask%20group%20(4).png" alt="img4">
                                 <img src="images/scroll-vertical-images/Mask%20group%20(1).png" alt="img1">
@@ -104,44 +105,44 @@
                         </div>
                     </div>
 
-                    <div class="mobile-carousel-container">
-                        <div class="mobile-carousel-track">
-                            <div class="mobile-carousel-item">
+                    <div class="home__carousel" role="region" aria-roledescription="carousel" aria-label="Featured school carousel" tabindex="0">
+                        <div class="home__carousel-track">
+                            <div class="home__carousel-item">
                                 <img src="images/scroll-vertical-images/Mask%20group%20(1).png" alt="school1">
                             </div>
-                            <div class="mobile-carousel-item">
+                            <div class="home__carousel-item">
                                 <img src="images/scroll-vertical-images/Mask%20group%20(2).png" alt="school2">
                             </div>
-                            <div class="mobile-carousel-item">
+                            <div class="home__carousel-item">
                                 <img src="images/scroll-vertical-images/Mask%20group%20(3).png" alt="school3">
                             </div>
-                            <div class="mobile-carousel-item">
+                            <div class="home__carousel-item">
                                 <img src="images/scroll-vertical-images/Mask%20group%20(4).png" alt="school4">
                             </div>
-                            <div class="mobile-carousel-item">
+                            <div class="home__carousel-item">
                                 <img src="images/scroll-vertical-images/Mask%20group%20(5).png" alt="school5">
                             </div>
                             <!-- duplicated set for seamless CSS loop -->
-                            <div class="mobile-carousel-item">
+                            <div class="home__carousel-item">
                                 <img src="images/scroll-vertical-images/Mask%20group%20(1).png" alt="school1">
                             </div>
-                            <div class="mobile-carousel-item">
+                            <div class="home__carousel-item">
                                 <img src="images/scroll-vertical-images/Mask%20group%20(2).png" alt="school2">
                             </div>
-                            <div class="mobile-carousel-item">
+                            <div class="home__carousel-item">
                                 <img src="images/scroll-vertical-images/Mask%20group%20(3).png" alt="school3">
                             </div>
-                            <div class="mobile-carousel-item">
+                            <div class="home__carousel-item">
                                 <img src="images/scroll-vertical-images/Mask%20group%20(4).png" alt="school4">
                             </div>
-                            <div class="mobile-carousel-item">
+                            <div class="home__carousel-item">
                                 <img src="images/scroll-vertical-images/Mask%20group%20(5).png" alt="school5">
                             </div>
                         </div>
                     </div>
 
                 </div>
-                <div class="right-side">
+                <div class="home__column home__column--enquiry">
                     <section class="enquiry-form" aria-labelledby="enquiry-title">
                         <div class="enquiry-form__inner">
                             <h2 id="enquiry-title" class="enquiry-form__title">Enquire Now</h2>

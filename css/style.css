@@ -4,11 +4,11 @@
     box-sizing: border-box;
 }
 
-.home-bg {
+.home {
     background: linear-gradient( 90deg,#030E3B 0%,#1A1450 25%,#32176A 55%,#4B1D7E 75%,#5C2592 100%);
 }
 
-.home-content {
+.home__content {
     display: flex;
     flex-direction: row;
     height: 100%;
@@ -16,36 +16,37 @@
     text-align: left;
 }
 
-.left-side,
-.middle-side,
-.right-side {
+.home__column,
+.home__column--intro,
+.home__column--gallery,
+.home__column--enquiry {
     flex: 0 0 33%;
     max-width: 33%;
 }
 
-.left-side {
+.home__column--intro {
     order: 1;
     padding: 120px 0px 120px 80px;
 }
 
-.middle-side {
+.home__column--gallery {
     order: 2;
     padding: 0;
     text-align: center;
 }
 
-.right-side {
+.home__column--enquiry {
     order: 3;
     padding: 120px 40px 40px 40px;
     text-align: center;
 }
 
-.heading-group {
+.home__headings {
     display: inline-block;
     max-width: 100%;
 }
 
-.heading {
+.home__heading {
     font-family: 'Museo Sans';
     font-size: 32px;
     font-weight: 600;
@@ -59,7 +60,7 @@
     color: transparent;
 }
 
-.heading-line2 {
+.home__heading--headline {
     margin-top: 4px;
     font-family: 'Museo Sans', 'Open Sans', sans-serif;
     font-size: 42px;
@@ -73,7 +74,7 @@
     margin-bottom: 8px;
 }
 
-.subheading {
+.home__tagline {
     font-size: 20px;
     line-height: 1.5;
     font-weight: 400;
@@ -86,38 +87,38 @@
     text-transform: uppercase;
 }
 
-.address-pill-container {
+.home__address-pill {
     background: linear-gradient(90deg, #FFCC81 0%, #E9C79F 100%);
     border-radius: 9999px;
     padding: 2px;
 }
 
-.address-content-box {
+.home__address-card {
     border: 1px solid #00000021;
     padding: 4px;
     border-radius: 9999px;
     
 }
-.address-content {
+.home__address-list {
     display: flex;
     justify-content: center;
     padding: 10px 8px;
 }
 
-.address-title {
+.home__address-label {
     color: #3F186A;
     font-weight: 700;
     font-size: 16px;
     text-align: center;
 }
 
-.timing-box {
+.home__address-meta {
     border-left: 1px solid #00000021;
     margin-left: 8px;
     padding-left: 8px;
 }
 
-.address-details {
+.home__address-value {
     color: #000E38;
     font-size: 12px;
     text-align: center;
@@ -125,31 +126,32 @@
 
 @media (max-width: 768px) {
 
-    .home-content {
+    .home__content {
         flex-direction: column;
     }
 
-    .left-side,
-    .middle-side,
-    .right-side {
+    .home__column,
+    .home__column--intro,
+    .home__column--gallery,
+    .home__column--enquiry {
         flex: 0 0 100%;
         max-width: 100%;
         width: 100%;
         padding: 80px 20px;
     }
 
-    .middle-side {
+    .home__column--gallery {
         order: 1;
         padding: 20px 0 0;
     }
 
-    .left-side {
+    .home__column--intro {
         order: 2;
         text-align: center;
         padding: 0px 20px 20px 20px;
     }
 
-    .right-side {
+    .home__column--enquiry {
         display: none;
     }
 
