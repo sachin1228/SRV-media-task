@@ -10,21 +10,6 @@ body {
     font-family: 'Open Sans', sans-serif;
 }
 
-@font-face {
-    font-family: 'Museo Sans';
-    font-style: normal;
-    font-weight: 100;
-    src: url('fonts/MuseoSans-100.otf') format('opentype');
-    font-display: swap;
-}
-
-@font-face {
-    font-family: 'Museo Sans';
-    font-style: normal;
-    font-weight: 300;
-    src: url('fonts/MuseoSans-300.otf') format('opentype');
-    font-display: swap;
-}
 
 @font-face {
     font-family: 'Museo Sans';
@@ -201,3 +186,47 @@ body {
     }
 
 }
+
+
+
+/* Mobile Horizontal Carousel - Separate styles for mobile only */
+
+/* Hide on desktop */
+@media (min-width: 769px) {
+    .mobile-carousel-container {
+        display: none;
+    }
+}
+
+/* Show on mobile */
+@media (max-width: 768px) {
+
+    .mobile-carousel-container {
+        display: flex;
+        width: 100%;
+        overflow: hidden;
+    }
+
+    .mobile-carousel-track {
+        display: flex;
+        gap: 12px;
+        width: max-content;
+        border-radius: 12px;
+        align-items: center;
+        will-change: transform;
+    }
+
+    .mobile-carousel-item {
+        flex: 0 0 auto;
+    }
+
+    .mobile-carousel-item img {
+        width: 140px;
+        display: block;
+        height: auto;
+        border-radius: 16px;
+    }
+
+}
+
+
