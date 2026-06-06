@@ -40,7 +40,7 @@
     }
 
     .col-track.track-1 { animation-duration: 16s; }
-    .col-track.track-2 { animation-duration: 18s; animation-direction: reverse; }
+    .col-track.track-2 { animation-duration: 18s; }
     .col-track.track-3 { animation-duration: 20s; }
 
     @keyframes scroll-up {
