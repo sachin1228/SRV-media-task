@@ -226,8 +226,7 @@
     justify-content: center;
     height: 36px;
     border: 1px solid #fff;
-    background: #081b57;
-    color: #081b57;
+    background: #5C2592;
     font-weight: 600;
     cursor: pointer;
 }
@@ -236,7 +235,7 @@
     content: "";
     position: absolute;
     inset: 0;
-    background: #5C2592;
+    background: #fff;
     transform: scaleX(0);
     transform-origin: left;
     transition: transform .55s ease;
@@ -281,7 +280,6 @@
     justify-content: center;
     background: #fff;
     flex-shrink: 0;
-    margin-right: 8px;
     position: relative;
     z-index: 2;
 }
