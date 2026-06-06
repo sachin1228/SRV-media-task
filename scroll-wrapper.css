@@ -46,6 +46,7 @@
 
 @media (max-width: 768px) {
     .scroll-wrapper {
+        display: none;
         padding: 0;
         gap: 12px;
     }
