@@ -267,8 +267,9 @@
     background: transparent;
 }
 
-.enquiry-form__submit.enquiry-form__button-text:hover {
+.enquiry-form__submit:hover .enquiry-form__button-text {
     color: #000;
+    transition: transform .55s ease;
 }
 
 .enquiry-form__submit:focus {
