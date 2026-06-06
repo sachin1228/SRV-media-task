@@ -142,7 +142,31 @@
 
                 </div>
                 <div class="right-side">
-                    <h1>form</h1>
+                    <section class="enquiry-form" aria-labelledby="enquiry-title">
+                        <div class="enquiry-form__inner">
+                            <h2 id="enquiry-title" class="enquiry-form__title">Enquire Now</h2>
+                            <form class="enquiry-form__form" action="#" method="post" novalidate>
+                                <div class="enquiry-form__field">
+                                    <label for="parent-name" class="sr-only">Parent name</label>
+                                    <input id="parent-name" name="parent-name" type="text" class="enquiry-form__input" placeholder="Parent name" required aria-required="true">
+                                </div>
+
+                                <div class="enquiry-form__field">
+                                    <label for="phone" class="sr-only">Phone number</label>
+                                    <input id="phone" name="phone" type="tel" pattern="[0-9+\-() ]{7,}" class="enquiry-form__input" placeholder="Phone number" required aria-required="true">
+                                </div>
+
+                                <div class="enquiry-form__field">
+                                    <label for="grade" class="sr-only">Which grade are you looking for</label>
+                                    <input id="grade" name="grade" type="text" class="enquiry-form__input" placeholder="Which grade are you looking for" required aria-required="true">
+                                </div>
+
+                                <div class="enquiry-form__actions">
+                                    <button type="submit" class="enquiry-form__submit">Submit</button>
+                                </div>
+                            </form>
+                        </div>
+                    </section>
                 </div>
             </div>
         </div>
