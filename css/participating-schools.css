@@ -1,6 +1,13 @@
 .participating-schools {
-    padding: 32px 20px;
-    margin: 0 auto 40px;
+    padding: 48px;
+    margin: 0 auto;
+}
+
+.participating-schools-title {
+    font-size: 28px;
+    color: #3F186A;
+    margin-bottom: 32px;
+    text-align: center;
 }
 
 .participating-schools__row {
