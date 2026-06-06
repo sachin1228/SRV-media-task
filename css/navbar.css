@@ -6,7 +6,7 @@
     background-color: transparent;
 }
 
-.logo-container {
+.navbar__brand {
     position: relative;
     width: 220px;
     height: 60px;
@@ -14,7 +14,7 @@
     align-items: center;
 }
 
-.logo {
+.navbar__logo {
     width: 160px;
     position: absolute;
     top: -20px;
@@ -24,7 +24,7 @@
     font-weight: bold;
 }
 
-.register-btn {
+.navbar__register-button {
     height: 36px;
     position: relative;
     border: 1px solid #081b57;
@@ -36,7 +36,7 @@
     background: #fff;
 }
 
-.register-btn::before {
+.navbar__register-button::before {
     content: "";
     position: absolute;
     inset: 0;
@@ -47,11 +47,11 @@
     z-index: 0;
 }
 
-.register-btn:hover::before {
+.navbar__register-button:hover::before {
     transform: scaleX(1);
 }
 
-.icon-box {
+.navbar__button-icon {
     width: 36px;
     height: 100%;
     background: linear-gradient(90deg, #030E3B 0%, #1A1450 25%, #32176A 55%, #4B1D7E 75%, #5C2592 100%);
@@ -63,7 +63,7 @@
     flex-shrink: 0;
 }
 
-.arrow {
+.navbar__icon-arrow {
     width: 12px;
     height: 12px;
     color: white;
@@ -72,11 +72,11 @@
     transform-origin: center;
 }
 
-.register-btn:hover .arrow {
+.navbar__register-button:hover .navbar__icon-arrow {
     transform: rotate(45deg);
 }
 
-.text {
+.navbar__button-text {
     flex: 1;
     display: flex;
     justify-content: center;
@@ -92,6 +92,6 @@
     transition: color .3s ease;
 }
 
-.register-btn:hover .text {
+.navbar__register-button:hover .navbar__button-text {
     color: white;
 }

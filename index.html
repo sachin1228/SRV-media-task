@@ -11,26 +11,27 @@
     <link rel="stylesheet" href="css/mobile-carousel.css">
 </head>
 <body>
-    <main>
-        <nav class="navbar">
-            <div class="logo-container">
-                <img class="logo" src="images/logo.png" alt="GitHub Logo">
+    <main id="main-content">
+        <nav class="navbar" role="navigation" aria-label="Primary navigation">
+            <div class="navbar__brand">
+                <img class="navbar__logo" src="images/logo.png" alt="GitHub Logo">
             </div>
-            <a href="#" class="register-btn">
-                <div class="icon-box">
+            <a href="#" class="navbar__register-button" role="button">
+                <div class="navbar__button-icon">
                     <svg xmlns="http://www.w3.org/2000/svg"
                     fill="none"
                     viewBox="0 0 24 24"
                     stroke-width="1.8"
                     stroke="currentColor"
-                    class="arrow">
+                    class="navbar__icon-arrow"
+                    aria-hidden="true">
                     <path
                         stroke-linecap="round"
                         stroke-linejoin="round"
                         d="m4.5 19.5 15-15m0 0H8.25m11.25 0v11.25"/>
                     </svg>
                 </div>
-                <div class="text">
+                <div class="navbar__button-text">
                     REGISTER NOW
                 </div>
             </a>
