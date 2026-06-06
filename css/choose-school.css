@@ -16,15 +16,10 @@
     font-size: 2rem;
     line-height: 1.1;
     margin: 0;
-    color: #ffffff;
+    color: #3F186A;
+    text-align: center;
 }
 
-.choose-school__subtitle {
-    margin: 12px 0 0;
-    color: rgba(255, 255, 255, 0.75);
-    font-size: 0.95rem;
-    line-height: 1.6;
-}
 
 .choose-school__slider {
     display: grid;
@@ -52,24 +47,6 @@
     display: block;
 }
 
-.choose-school__card-body {
-    padding: 18px 16px 20px;
-}
-
-.choose-school__card-title {
-    margin: 0;
-    font-size: 1rem;
-    color: #ffffff;
-    line-height: 1.3;
-}
-
-.choose-school__card-copy {
-    margin: 12px 0 0;
-    color: rgba(255, 255, 255, 0.7);
-    font-size: 0.95rem;
-    line-height: 1.6;
-}
-
 .choose-school__pagination {
     display: none;
     justify-content: center;
@@ -88,7 +65,7 @@
 
 .choose-school__dot:hover,
 .choose-school__dot:focus-visible {
-    background: #ffffff;
+    background: red;
 }
 
 .choose-school__slider {
