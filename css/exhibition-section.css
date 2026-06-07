@@ -24,10 +24,6 @@
 }
 
 
-.exhibition-section__slider-wrapper {
-    overflow: hidden;
-}
-
 .exhibition-section__slider {
     display: flex;
     gap: 16px;
@@ -35,6 +31,7 @@
     scroll-snap-type: x mandatory;
     -webkit-overflow-scrolling: touch;
     padding-bottom: 8px;
+    scroll-behavior: smooth;
 }
 
 .exhibition-section__slider:focus {
@@ -52,8 +49,8 @@
     display: flex;
     flex-direction: column;
     gap: 16px;
+    transition: transform 0.3s ease;
 }
-
 
 .exhibition-section__icon svg {
     width: 48px;
@@ -90,7 +87,6 @@
     justify-content: center;
     gap: 16px;
     margin-top: 24px;
-    flex-wrap: wrap;
 }
 
 .exhibition-section__button {
@@ -98,9 +94,18 @@
     background: transparent;
     color: #fff;
     padding: 12px;
-    border-radius: 9999px;
+    border-radius: 999px;
     cursor: pointer;
-    font-size: 0.95rem;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.exhibition-section__button:hover,
+.exhibition-section__button:focus-visible {
+    background: rgba(255,255,255,0.1);
+    border-color: rgba(255,255,255,0.6);
 }
 
 .exhibition-section__button svg {
@@ -109,20 +114,25 @@
     display: block;
 }
 
-.exhibition-section__button:hover,
-.exhibition-section__button:focus {
-    background: rgba(255,255,255,0.1);
-    outline: none;
+/* Respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+    .exhibition-section__slider {
+        scroll-behavior: auto !important;
+    }
+
+    .exhibition-section__card {
+        transition: none !important;
+    }
+
+    .exhibition-section__button {
+        transition: none !important;
+    }
 }
 
 @media (max-width: 768px) {
     .exhibition-section__card {
         min-width: 100%;
         max-width: 100%;
-        grid-template-columns: 1fr;
     }
 
-    .exhibition-section__controls {
-        flex-direction: column;
-    }
 }

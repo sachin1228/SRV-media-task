@@ -98,6 +98,17 @@
 
 .enquiry-form__submit > * {
     position: relative;
+}
+
+/* Respect reduced motion in transitions */
+@media (prefers-reduced-motion: reduce) {
+    .enquiry-form__input,
+    .enquiry-form__submit::before,
+    .enquiry-form__submit {
+        transition: none !important;
+        animation: none !important;
+    }
+}
     z-index: 2;
 }
 

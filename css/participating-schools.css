@@ -63,6 +63,16 @@
     to { transform: translateX(0); }
 }
 
+/* Respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+    .participating-schools__track {
+        animation: none !important;
+        transform: none !important;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+}
+
 @media (max-width: 768px) {
     .participating-schools__item {
         width: 100px;

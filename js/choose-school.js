@@ -4,10 +4,18 @@ document.addEventListener('DOMContentLoaded', function () {
     const dots = Array.from(document.querySelectorAll('.choose-school__dot'));
     if (!slider || !slides.length || !dots.length) return;
 
+    // Create aria-live announcement region
+    const liveRegion = document.createElement('div');
+    liveRegion.setAttribute('aria-live', 'polite');
+    liveRegion.setAttribute('aria-atomic', 'true');
+    liveRegion.className = 'sr-only';
+    document.body.appendChild(liveRegion);
+
     const updateCurrentDot = (id) => {
         dots.forEach(dot => {
             if (dot.getAttribute('href') === `#${id}`) {
                 dot.setAttribute('aria-current', 'true');
+                liveRegion.textContent = `School option ${id.split('-').pop()} of ${slides.length} selected`;
             } else {
                 dot.removeAttribute('aria-current');
             }
@@ -26,4 +34,29 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
     slides.forEach(slide => observer.observe(slide));
+
+    // Keyboard navigation
+    slider.addEventListener('keydown', (e) => {
+        const scrollAmount = slider.offsetWidth * 0.86;
+        if (e.key === 'ArrowLeft') {
+            e.preventDefault();
+            slider.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+        } else if (e.key === 'ArrowRight') {
+            e.preventDefault();
+            slider.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+        }
+    });
+
+    // Click pagination dots to scroll
+    dots.forEach(dot => {
+        dot.addEventListener('click', (e) => {
+            e.preventDefault();
+            const targetId = dot.getAttribute('href').substring(1);
+            const targetSlide = document.getElementById(targetId);
+            if (targetSlide) {
+                targetSlide.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+                updateCurrentDot(targetId);
+            }
+        });
+    });
 });

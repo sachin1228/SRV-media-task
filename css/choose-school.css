@@ -99,6 +99,19 @@
     }
 
     .choose-school__pagination {
+        display: flex !important;
+    }
+}
+
+/* Respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+    .choose-school__slider,
+    .choose-school__dot {
+        scroll-behavior: auto !important;
+        transition: none !important;
+    }
+
+    .choose-school__pagination {
         display: flex;
     }
 }
