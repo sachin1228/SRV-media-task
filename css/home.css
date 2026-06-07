@@ -5,9 +5,6 @@
 .home__content {
     display: flex;
     flex-direction: row;
-    height: 100%;
-    color: #fff;
-    text-align: left;
 }
 
 .home__column,
@@ -26,18 +23,11 @@
 .home__column--gallery {
     order: 2;
     padding: 0;
-    text-align: center;
 }
 
 .home__column--enquiry {
     order: 3;
     padding: 120px 40px 40px 40px;
-    text-align: center;
-}
-
-.home__headings {
-    display: inline-block;
-    max-width: 100%;
 }
 
 .home__heading {
@@ -147,6 +137,10 @@
 
     .home__column--enquiry {
         display: none;
+    }
+
+    .home__heading {
+        text-align: center;
     }
 
 }
