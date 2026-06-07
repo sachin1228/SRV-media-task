@@ -1,5 +1,5 @@
 .participating-schools {
-    padding: 48px;
+    padding: 48px 0;
     margin: 0 auto;
 }
 
@@ -20,7 +20,6 @@
     display: inline-flex;
     gap: 24px;
     align-items: center;
-    width: max-content;
     animation: participating-schools-slide 60s linear infinite;
     will-change: transform;
 }
@@ -30,7 +29,7 @@
 }
 
 .participating-schools__track:focus-visible {
-    outline: 2px solid #ffffff;
+    outline: 4px solid indigo;
     outline-offset: 4px;
 }
 
