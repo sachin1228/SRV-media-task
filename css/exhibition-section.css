@@ -18,15 +18,11 @@
 
 .exhibition-section__title {
     margin: 0;
+    text-align: center;
     font-size: 32px;
     color: #fff;
 }
 
-.exhibition-section__desc {
-    margin: 0;
-    color: rgba(255,255,255,0.85);
-    max-width: 680px;
-}
 
 .exhibition-section__slider-wrapper {
     overflow: hidden;
@@ -51,10 +47,9 @@
     min-width: 280px;
     max-width: 320px;
     scroll-snap-align: center;
-    background: rgba(255,255,255,0.06);
-    border: 1px solid rgba(255,255,255,0.18);
-    border-radius: 24px;
-    padding: 24px;
+    background: linear-gradient(180deg,#DDBFFF 0%,#EDDDFF 100%);
+    border-radius: 20px;
+    padding: 16px;
     display: grid;
     grid-template-columns: auto 1fr;
     gap: 16px;
