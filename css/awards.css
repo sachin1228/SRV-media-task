@@ -19,11 +19,8 @@
 }
 
 .awards__logo {
-    width: 100%;
     max-width: 160px;
     height: auto;
-    display: block;
-    object-fit: contain;
 }
 
 @media (max-width: 768px) {
