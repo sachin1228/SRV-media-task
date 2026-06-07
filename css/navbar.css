@@ -3,15 +3,12 @@
     justify-content: space-between;
     align-items: center;
     padding: 20px 80px;
-    background-color: transparent;
 }
 
 .navbar__brand {
     position: relative;
-    width: 220px;
+    width: 160px;
     height: 60px;
-    display: flex;
-    align-items: center;
 }
 
 .navbar__logo {
@@ -19,9 +16,6 @@
     position: absolute;
     top: -20px;
     left: -20px;
-    color: #fff;
-    font-size: 24px;
-    font-weight: bold;
 }
 
 .navbar__register-button {
@@ -29,11 +23,9 @@
     position: relative;
     border: 1px solid #081b57;
     border-radius: 4px;
-    overflow: hidden;
     display: flex;
     align-items: center;
     text-decoration: none;
-    background: #fff;
 }
 
 .navbar__register-button::before {
@@ -77,7 +69,6 @@
 }
 
 .navbar__button-text {
-    flex: 1;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -85,7 +76,6 @@
     font-size: 12px;
     font-weight: 600;
     height: 100%;
-    letter-spacing: .5px;
     color: #081b57;
     position: relative;
     z-index: 2;
