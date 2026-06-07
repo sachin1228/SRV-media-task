@@ -364,40 +364,42 @@
             <div class="choose-school__inner">
                 <div class="choose-school__header">
                     <h2 id="choose-school-title" class="choose-school__title">Choose the School That Fits You Best</h2>
+                    <p id="choose-school-description" class="sr-only">Carousel showing school options. Use the pagination controls below to move between slides.</p>
                 </div>
 
-                <div class="choose-school__slider" role="list">
-                    <div id="choose-school-slide-1" class="choose-school__card" role="listitem">
+                <div class="choose-school__slider"
+                     role="region"
+                     aria-roledescription="carousel"
+                     aria-label="Choose the school carousel"
+                     aria-describedby="choose-school-description"
+                     tabindex="0">
+                    <div id="choose-school__slide-1" class="choose-school__card" role="group" aria-roledescription="slide" aria-label="Slide 1 of 4">
                         <div class="choose-school__card-image">
                             <img src="images/choose-the-schools/01.png" alt="Choose the school image one">
                         </div>
-                        
                     </div>
-                    <div id="choose-school-slide-2" class="choose-school__card" role="listitem">
+                    <div id="choose-school__slide-2" class="choose-school__card" role="group" aria-roledescription="slide" aria-label="Slide 2 of 4">
                         <div class="choose-school__card-image">
                             <img src="images/choose-the-schools/02.png" alt="Choose the school image two">
                         </div>
-                        
                     </div>
-                    <div id="choose-school-slide-3" class="choose-school__card" role="listitem">
+                    <div id="choose-school__slide-3" class="choose-school__card" role="group" aria-roledescription="slide" aria-label="Slide 3 of 4">
                         <div class="choose-school__card-image">
                             <img src="images/choose-the-schools/03.png" alt="Choose the school image three">
                         </div>
-                        
                     </div>
-                    <div id="choose-school-slide-4" class="choose-school__card" role="listitem">
+                    <div id="choose-school__slide-4" class="choose-school__card" role="group" aria-roledescription="slide" aria-label="Slide 4 of 4">
                         <div class="choose-school__card-image">
                             <img src="images/choose-the-schools/04.png" alt="Choose the school image four">
                         </div>
-                        
                     </div>
                 </div>
 
                 <div class="choose-school__pagination" aria-label="Choose the school pagination">
-                    <a href="#choose-school-slide-1" class="choose-school__dot" aria-current="true" aria-label="View slide 1"></a>
-                    <a href="#choose-school-slide-2" class="choose-school__dot" aria-label="View slide 2"></a>
-                    <a href="#choose-school-slide-3" class="choose-school__dot" aria-label="View slide 3"></a>
-                    <a href="#choose-school-slide-4" class="choose-school__dot" aria-label="View slide 4"></a>
+                    <a href="#choose-school__slide-1" class="choose-school__dot" aria-current="true" aria-label="View slide 1"></a>
+                    <a href="#choose-school__slide-2" class="choose-school__dot" aria-label="View slide 2"></a>
+                    <a href="#choose-school__slide-3" class="choose-school__dot" aria-label="View slide 3"></a>
+                    <a href="#choose-school__slide-4" class="choose-school__dot" aria-label="View slide 4"></a>
                 </div>
             </div>
         </section>
