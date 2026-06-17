@@ -82,15 +82,15 @@
 }
 
 .exhibition-section__controls {
+    position: relative;
     display: flex;
     justify-content: center;
-    align-items: start;
+    align-items: center;
     gap: 16px;
-    background-image: url("../images/round.webp");
-    background-repeat: no-repeat;
-    background-size: contain;
+    overflow: visible;
     min-height: 220px;
-    padding-top: 32px;
+    padding-top: 0;
+    padding-bottom: 16px;
 }
 
 .exhibition-section__button {
@@ -142,6 +142,34 @@
     }
 }
 
+/* Background layer for controls (keeps image responsive and centered) */
+.exhibition-section__controls-bg {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    aspect-ratio: 16 / 5; /* wide banner */
+    min-height: 132px;
+    height: 132px;
+    background-image: url("../images/round.webp");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    z-index: 0;
+    pointer-events: none;
+}
+
+.exhibition-section__controls-inner {
+    position: absolute;
+    left: 50%;
+    top: 30%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    display: flex;
+    gap: 16px;
+    align-items: center;
+}
+
 
 
 @media (max-width: 768px) {
@@ -175,5 +203,38 @@
     }
     .exhibition-section__card-text {
         font-size: 13px;
+    }
+}
+
+/* Mobile: make controls compact, centered, and remove large background */
+@media (max-width: 480px) {
+    .exhibition-section__controls {
+        min-height: auto;
+        padding-top: 0;
+        padding-bottom: 12px;
+    }
+
+    .exhibition-section__controls-bg {
+        aspect-ratio: 16 / 8;
+        top: 0;
+        min-height: 120px;
+        height: 120px;
+    }
+
+    .exhibition-section__controls-inner {
+        top: 55%;
+        transform: translate(-50%, -55%);
+    }
+
+    .exhibition-section__button {
+        padding: 10px;
+        width: 48px;
+        height: 48px;
+        border-width: 1px;
+    }
+
+    .exhibition-section__button svg {
+        width: 18px;
+        height: 18px;
     }
 }
