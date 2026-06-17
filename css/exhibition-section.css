@@ -5,7 +5,6 @@
 }
 
 .exhibition-section__inner {
-    max-width: 1200px;
     margin: 0 auto;
 }
 
@@ -136,16 +135,7 @@
     }
 }
 
-/* 1440px horizontal alignment */
-@media (max-width: 1440px) {
-    .exhibition-section-gradient-bg {
-        padding-left: 64px;
-        padding-right: 64px;
-    }
-    .exhibition-section__inner {
-        max-width: 1040px;
-    }
-}
+
 
 @media (max-width: 768px) {
     .exhibition-section-gradient-bg {
