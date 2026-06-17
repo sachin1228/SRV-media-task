@@ -4,7 +4,7 @@
 }
 
 .choose-school__inner {
-    max-width: 64rem;
+    max-width: 1740px;
     margin: 0 auto;
 }
 
@@ -13,7 +13,7 @@
 }
 
 .choose-school__title {
-    font-size: 2rem;
+    font-size: 48px;
     line-height: 1.1;
     color: #3F186A;
     text-align: center;
@@ -36,6 +36,41 @@
     height: 100%;
     object-fit: cover;
     display: block;
+}
+
+/* Board-style cards with overlay text */
+.choose-board .board-card {
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+    background: #00000010;
+}
+
+.choose-board .board-card img {
+    width: 100%;
+    display: block;
+}
+
+.board-card__overlay {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 18px 16px;
+    background: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.55) 60%);
+    color: #ffffff;
+}
+
+.board-card__overlay h5 {
+    margin: 0 0 6px 0;
+    font-size: 18px;
+    line-height: 1.2;
+}
+
+.board-card__overlay p {
+    margin: 0;
+    font-size: 14px;
+    opacity: 0.95;
 }
 
 .choose-school__pagination {
@@ -87,6 +122,15 @@
         flex: 0 0 86%;
         min-width: 86%;
         scroll-snap-align: start;
+    }
+
+    /* mobile: reduce image height for board cards and tighten overlay */
+    .choose-board .board-card img {
+        height: 200px;
+    }
+
+    .board-card__overlay {
+        padding: 12px 12px;
     }
 
     .choose-school__pagination {
