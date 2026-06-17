@@ -1,5 +1,5 @@
 .awards {
-    padding: 32px 20px;
+    padding: 80px 20px;
     margin: 20px auto;
     max-width: 92rem;
 }
@@ -19,12 +19,56 @@
 }
 
 .awards__logo {
-    max-width: 310px;
+    max-width: 306px;
     height: auto;
 }
 
+/* Responsive adjustments */
+@media (max-width: 1440px) {
+    .awards {
+        padding: 28px 18px;
+        max-width: 80rem;
+    }
+    .awards__grid {
+        gap: 24px;
+    }
+    .awards__logo {
+        max-width: 260px;
+    }
+}
+
+@media (max-width: 1200px) {
+    .awards__grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 22px;
+    }
+    .awards__logo {
+        max-width: 220px;
+    }
+}
+
 @media (max-width: 768px) {
+    .awards {
+        padding: 20px 16px;
+    }
     .awards__grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 18px;
+    }
+    .awards__logo {
+        max-width: 180px;
+    }
+}
+
+@media (max-width: 480px) {
+    .awards {
+        padding: 16px 12px;
+    }
+    .awards__grid {
+        grid-template-columns: 1fr;
+        gap: 14px;
+    }
+    .awards__logo {
+        max-width: 140px;
     }
 }
