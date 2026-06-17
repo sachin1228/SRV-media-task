@@ -161,6 +161,36 @@
 .navbar__register-button--alt::before {
     display: none !important;
 }
+
+/* Prevent alt button text wrapping and disable hover color change */
+.navbar__register-button--alt .navbar__button-text {
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+.navbar__register-button--alt:hover .navbar__button-text {
+    color: #081b57 !important;
+}
+
+/* SVG inside the alternate white button: size and color only for this button */
+.navbar__register-button--alt .navbar__button-text svg {
+    width: 18px;
+    height: 18px;
+    margin-left: 8px;
+    display: inline-block;
+    vertical-align: middle;
+    color: inherit; /* ensures stroke set to currentColor follows text color */
+}
+
+/* Ensure the alt button uses flex layout so icon aligns with text */
+.navbar__register-button--alt {
+    display: none;
+    background: #ffffff;
+    color: #081b57;
+    align-items: center;
+}
+.navbar--sticky .navbar__register-button--alt {
+    display: flex;
+}
 .navbar__register-button--alt .navbar__button-text {
     color: #081b57;
 }
