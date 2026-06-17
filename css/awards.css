@@ -27,13 +27,13 @@
 @media (max-width: 1440px) {
     .awards {
         padding: 28px 18px;
-        max-width: 80rem;
+        max-width: 60rem;
     }
     .awards__grid {
         gap: 24px;
     }
     .awards__logo {
-        max-width: 260px;
+        max-width: 200px;
     }
 }
 
