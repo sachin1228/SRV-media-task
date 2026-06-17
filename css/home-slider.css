@@ -8,6 +8,21 @@
     padding: 0 48px;
 }
 
+/* 1440px and mobile alignment */
+@media (max-width: 1440px) {
+    .home__slider {
+        padding-left: 64px;
+        padding-right: 64px;
+    }
+}
+
+@media (max-width: 768px) {
+    .home__slider {
+        padding-left: 12px;
+        padding-right: 12px;
+    }
+}
+
 .home__slider-column {
     height: 600px;
     overflow: hidden;

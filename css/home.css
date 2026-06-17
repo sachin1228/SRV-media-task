@@ -124,11 +124,11 @@
 
 @media (max-width: 1440px) {
     .home__heading {
-        font-size: 30px;
-        line-height: 1.2;
+        font-size: 42px;
+        line-height: 1.25;
     }
     .home__tagline {
-        font-size: 26px;
+        font-size: 22px;
         line-height: 1.2;
     }
     .home__address-label {

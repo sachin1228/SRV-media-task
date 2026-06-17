@@ -125,9 +125,7 @@
     }
 
     /* mobile: reduce image height for board cards and tighten overlay */
-    .choose-board .board-card img {
-        height: 200px;
-    }
+
 
     .board-card__overlay {
         padding: 12px 12px;
@@ -148,5 +146,48 @@
 
     .choose-school__pagination {
         display: flex;
+    }
+}
+
+/* 1440px and mobile adjustments to align with navbar spacing */
+@media (max-width: 1440px) {
+    .choose-school {
+        padding-left: 64px;
+        padding-right: 64px;
+    }
+    .choose-school__slider {
+        gap: 28px;
+    }
+}
+
+@media (max-width: 768px) {
+    .choose-school {
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+}
+
+/* Font size adjustments */
+@media (max-width: 1440px) {
+    .choose-school__title {
+        font-size: 40px;
+    }
+    .choose-board .board-card__overlay h5 {
+        font-size: 16px;
+    }
+    .choose-board .board-card__overlay p {
+        font-size: 12px;
+    }
+}
+
+@media (max-width: 768px) {
+    .choose-school__title {
+        font-size: 28px;
+    }
+    .choose-board .board-card__overlay h5 {
+        font-size: 16px;
+    }
+    .choose-board .board-card__overlay p {
+        font-size: 13px;
     }
 }

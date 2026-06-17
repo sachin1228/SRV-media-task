@@ -134,5 +134,49 @@
         min-width: 100%;
         max-width: 100%;
     }
+}
 
+/* 1440px horizontal alignment */
+@media (max-width: 1440px) {
+    .exhibition-section-gradient-bg {
+        padding-left: 64px;
+        padding-right: 64px;
+    }
+    .exhibition-section__inner {
+        max-width: 1040px;
+    }
+}
+
+@media (max-width: 768px) {
+    .exhibition-section-gradient-bg {
+        padding-left: 16px;
+        padding-right: 16px;
+        padding-top: 48px;
+        padding-bottom: 48px;
+    }
+}
+
+/* Font size adjustments for exhibition */
+@media (max-width: 1440px) {
+    .exhibition-section__title {
+        font-size: 28px;
+    }
+    .exhibition-section__card-title {
+        font-size: 16px;
+    }
+    .exhibition-section__card-text {
+        font-size: 13px;
+    }
+}
+
+@media (max-width: 768px) {
+    .exhibition-section__title {
+        font-size: 20px;
+    }
+    .exhibition-section__card-title {
+        font-size: 15px;
+    }
+    .exhibition-section__card-text {
+        font-size: 13px;
+    }
 }

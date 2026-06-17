@@ -10,6 +10,18 @@
     text-align: center;
 }
 
+@media (max-width: 1440px) {
+    .participating-schools-title {
+        font-size: 28px;
+    }
+}
+
+@media (max-width: 768px) {
+    .participating-schools-title {
+        font-size: 20px;
+    }
+}
+
 .participating-schools__row {
     position: relative;
     overflow: hidden;
