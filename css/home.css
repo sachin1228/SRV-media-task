@@ -94,9 +94,9 @@
 }
 
 .home__address-pill {
-    background: linear-gradient(90deg, #FFCC81 0%, #E9C79F 100%);
+    background: linear-gradient(rgb(255, 204, 129), rgb(233, 199, 159));
     border-radius: 9999px;
-    padding: 2px;
+    padding: 6px;
     display: inline-flex;
 }
 
@@ -109,13 +109,13 @@
 .home__address-list {
     display: flex;
     justify-content: center;
-    padding: 10px 8px;
+    padding: 20px;
 }
 
 .home__address-label {
     color: #3F186A;
     font-weight: 700;
-    font-size: 16px;
+    font-size: 26px;
     text-align: center;
 }
 
@@ -127,7 +127,7 @@
 
 .home__address-value {
     color: #000E38;
-    font-size: 12px;
+    font-size: 18px;
     text-align: center;
 }
 
