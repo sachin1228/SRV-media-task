@@ -45,12 +45,18 @@
 }
 
 .enquiry-form__input::placeholder {
-    color: rgba(255,255,255,0.6);
+    color: #ffffff;
 }
 
 .enquiry-form__input:focus {
     outline: 2px solid rgba(255,255,255,0.18);
     outline-offset: 2px;
+}
+
+/* Textarea should visually match inputs and have a fixed height */
+textarea.enquiry-form__input {
+    height: 100px;
+    resize: vertical;
 }
 
 .enquiry-form__actions {
