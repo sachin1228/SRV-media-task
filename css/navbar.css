@@ -12,10 +12,14 @@
 }
 
 .navbar__logo {
-    width: 160px;
+    width: 200px;
     position: absolute;
     top: -20px;
     left: -20px;
+}
+
+.navbar__logo {
+    transition: width .25s ease, top .25s ease, left .25s ease;
 }
 
 .navbar__register-button {
@@ -114,3 +118,108 @@
         animation: none !important;
     }
 }
+
+/* General navbar adjustments and transitions */
+.navbar {
+    transition: background .25s ease, padding .25s ease, box-shadow .25s ease;
+    background: transparent;
+    position: relative;
+    z-index: 50;
+}
+
+.navbar__menu {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+/* sticky state applied via JS */
+.navbar--sticky {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(90deg, #030E3B 0%, #1A1450 25%, #32176A 55%, #4B1D7E 75%, #5C2592 100%);
+    box-shadow: 0 6px 20px rgba(10,10,20,0.12);
+    backdrop-filter: blur(6px);
+}
+
+.navbar--sticky .navbar__button-text {
+    color: #ffffff;
+}
+.navbar--sticky .navbar__register-button {
+    border-color: transparent;
+    display: none;
+}
+
+/* alternate white button: hidden by default, shown only when sticky */
+.navbar__register-button--alt {
+    display: none;
+    background: #ffffff;
+    color: #081b57;
+}
+.navbar__register-button--alt::before {
+    display: none !important;
+}
+.navbar__register-button--alt .navbar__button-text {
+    color: #081b57;
+}
+.navbar--sticky .navbar__register-button--alt {
+    display: flex;
+}
+
+.navbar--sticky .navbar__logo {
+    width: 120px;
+}
+
+/* 1440px adjustments */
+@media (max-width: 1440px) {
+    .navbar {
+        padding: 18px 64px;
+    }
+    .navbar__brand {
+        width: 140px;
+        height: 52px;
+    }
+    .navbar__logo {
+        width: 140px;
+        top: -16px;
+        left: -16px;
+    }
+    .navbar__button-text {
+        font-size: 11px;
+        padding: 0 10px;
+    }
+    .navbar__button-icon {
+        width: 52px;
+    }
+}
+
+/* Mobile styles */
+@media (max-width: 767px) {
+    /* Keep desktop layout styles but scale down slightly for small screens */
+    .navbar {
+        padding: 12px 24px;
+    }
+    .navbar__brand {
+        width: 130px;
+        height: 50px;
+    }
+    .navbar__logo {
+        width: 130px;
+        top: -12px;
+        left: -12px;
+        position: relative;
+    }
+    .navbar__button-text {
+        font-size: 12px;
+    }
+    .navbar__button-icon {
+        width: 48px;
+    }
+    .navbar--sticky {
+        padding: 8px 16px;
+    }
+}
+
+/* no hamburger menu - desktop layout only */
