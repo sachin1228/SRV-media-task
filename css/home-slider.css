@@ -1,7 +1,7 @@
 /* Vertical auto-scrolling columns */
 .home__slider {
     display: flex;
-    gap: 16px;
+    gap: 24px;
     width: 100%;
     justify-content: center;
     align-items: flex-start;
@@ -9,7 +9,7 @@
 }
 
 .home__slider-column {
-    height: 472px;
+    height: 530px;
     overflow: hidden;
     position: relative;
 }
@@ -24,6 +24,12 @@
     display: block;
     margin-bottom: 12px;
     border-radius: 20px;
+}
+
+/* Force all images inside .home__slider-column to be 200x440 and crop to fit */
+.home__slider-column .home__slider-track img {
+    width: 100%;
+    display: block;
 }
 
 .home__slider-track { will-change: transform; }
