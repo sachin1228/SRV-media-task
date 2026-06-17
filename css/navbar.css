@@ -19,7 +19,7 @@
 }
 
 .navbar__register-button {
-    height: 36px;
+    height: 60px;
     position: relative;
     border: 1px solid #081b57;
     border-radius: 4px;
@@ -44,7 +44,7 @@
 }
 
 .navbar__button-icon {
-    width: 36px;
+    width: 60px;
     height: 100%;
     background: linear-gradient(90deg, #030E3B 0%, #1A1450 25%, #32176A 55%, #4B1D7E 75%, #5C2592 100%);
     display: flex;
@@ -56,8 +56,8 @@
 }
 
 .navbar__icon-arrow {
-    width: 12px;
-    height: 12px;
+    width: 16px;
+    height: 16px;
     color: white;
     transform: rotate(0deg);
     transition: transform .45s ease;
