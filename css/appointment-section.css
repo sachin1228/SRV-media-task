@@ -39,5 +39,76 @@
   color: #9b4df0;
   font-size: 1.56rem;
   line-height: 1.4;
-  margin-bottom: 0;
+  margin-bottom: 32px;
+}
+
+.appointment__button {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  height: 60px;
+  border: 1px solid #081b57;
+  border-radius: 4px;
+  background: transparent;
+  color: #081b57;
+  font-weight: 600;
+  padding: 0;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.appointment__button::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: #5c2592;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform .55s ease;
+  z-index: 0;
+}
+
+.appointment__button:hover::before {
+  transform: scaleX(1);
+}
+
+.appointment__button-icon {
+  width: 60px;
+  height: 100%;
+  background: linear-gradient(90deg, #030e3b 0%, #1a1450 25%, #32176a 55%, #4b1d7e 75%, #5c2592 100%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  z-index: 2;
+  flex-shrink: 0;
+}
+
+.appointment__icon-arrow {
+  width: 16px;
+  height: 16px;
+  color: white;
+  transform: rotate(0deg);
+  transition: transform .45s ease;
+  transform-origin: center;
+}
+
+.appointment__button:hover .appointment__icon-arrow {
+  transform: rotate(45deg);
+}
+
+.appointment__button-text {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 12px;
+  font-size: 12px;
+  height: 100%;
+  position: relative;
+  z-index: 2;
+  transition: color .3s ease;
+}
+
+.appointment__button:hover .appointment__button-text {
+  color: white;
 }
