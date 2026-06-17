@@ -1,0 +1,43 @@
+/* ========================= APPOINTMENT SECTION ========================= */
+
+.appointment {
+  position: relative;
+  max-width: 100%;
+  display: flex;
+  align-items: center;
+  padding: 120px 80px;
+  background: linear-gradient(90deg,
+      rgba(230, 210, 255, 0.95) 0%,
+      rgba(230, 210, 255, 0.75) 40%,
+      rgba(230, 210, 255, 0.2) 60%,
+      rgba(230, 210, 255, 0) 100%),
+    url("../images/schdule-bg.webp") no-repeat center right;
+  background-size: cover;
+}
+
+.appointment__content {
+  max-width: 560px;
+}
+
+.appointment__eyebrow {
+  color: #9b4df0;
+  font-size: 32px;
+  line-height: 1.2;
+  margin-bottom: 12px;
+  font-weight: 400;
+}
+
+.appointment__title {
+  color: #3f186a;
+  font-size: 54px;
+  line-height: 1.1;
+  margin-bottom: 14px;
+  font-weight: 500;
+}
+
+.appointment__subtitle {
+  color: #9b4df0;
+  font-size: 1.56rem;
+  line-height: 1.4;
+  margin-bottom: 0;
+}
