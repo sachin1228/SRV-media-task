@@ -21,10 +21,11 @@
 
 .appointment__eyebrow {
   color: #9b4df0;
-  font-size: 32px;
+  font-size: 28px;
   line-height: 1.2;
   margin-bottom: 12px;
   font-weight: 400;
+  font-style: italic;
 }
 
 .appointment__title {
@@ -40,6 +41,7 @@
   font-size: 1.56rem;
   line-height: 1.4;
   margin-bottom: 32px;
+  font-style: italic;
 }
 
 .appointment__button {
@@ -111,4 +113,48 @@
 
 .appointment__button:hover .appointment__button-text {
   color: white;
+}
+
+@media (max-width: 1440px) {
+  .appointment {
+    padding: 100px 60px;
+  }
+
+  .appointment__eyebrow {
+    font-size: 28px;
+  }
+
+  .appointment__title {
+    font-size: 48px;
+  }
+}
+
+@media (max-width: 768px) {
+  .appointment {
+    padding: 60px 20px;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .appointment__eyebrow {
+    font-size: 20px;
+  }
+
+  .appointment__title {
+    font-size: 32px;
+    margin-bottom: 12px;
+  }
+
+  .appointment__subtitle {
+    font-size: 1.2rem;
+    margin-bottom: 24px;
+  }
+
+  .appointment__button {
+    width: 100%;
+  }
+
+  .appointment__button-text {
+    padding: 0 16px;
+  }
 }
