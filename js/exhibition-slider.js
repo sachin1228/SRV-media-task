@@ -11,21 +11,50 @@ document.addEventListener('DOMContentLoaded', function () {
     liveRegion.className = 'sr-only';
     document.body.appendChild(liveRegion);
 
+    const cards = Array.from(slider.querySelectorAll('.exhibition-section__card'));
+    const totalSlides = cards.length;
+
+    const getActiveIndex = () => {
+        const viewportLeft = slider.scrollLeft;
+        const viewportRight = viewportLeft + slider.clientWidth;
+        let activeIndex = 0;
+        let maxVisibleWidth = -1;
+
+        cards.forEach((card, index) => {
+            const cardLeft = card.offsetLeft;
+            const cardRight = cardLeft + card.clientWidth;
+            const visibleWidth = Math.max(0, Math.min(cardRight, viewportRight) - Math.max(cardLeft, viewportLeft));
+
+            if (visibleWidth > maxVisibleWidth) {
+                maxVisibleWidth = visibleWidth;
+                activeIndex = index;
+            }
+        });
+
+        return activeIndex;
+    };
+
+    const scrollToIndex = (index) => {
+        const card = cards[index];
+        if (!card) return;
+
+        card.scrollIntoView({ behavior: 'smooth', inline: 'start', block: 'nearest' });
+    };
+
     const announceSlide = (direction) => {
-        const scrollPos = slider.scrollLeft;
-        const cardWidth = 320;
-        const currentSlide = Math.round(scrollPos / cardWidth) + 1;
-        const totalSlides = slider.querySelectorAll('.exhibition-section__card').length;
+        const currentSlide = getActiveIndex() + 1;
         liveRegion.textContent = `Exhibition highlight ${currentSlide} of ${totalSlides}, ${direction}`;
     };
 
-    const step = Math.round(slider.offsetWidth * 0.8);
     const scrollToPrevious = () => {
-        slider.scrollBy({ left: -step, behavior: 'smooth' });
+        const currentIndex = getActiveIndex();
+        scrollToIndex(Math.max(0, currentIndex - 1));
         announceSlide('previous');
     };
+
     const scrollToNext = () => {
-        slider.scrollBy({ left: step, behavior: 'smooth' });
+        const currentIndex = getActiveIndex();
+        scrollToIndex(Math.min(totalSlides - 1, currentIndex + 1));
         announceSlide('next');
     };
 
