@@ -9,6 +9,8 @@
 
 .enquiry-form {
     width: 100%;
+    display: flex;
+    justify-content: end;
 }
 
 .enquiry-form__inner {
