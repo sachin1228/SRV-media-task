@@ -1,7 +1,7 @@
 .exhibition-section-gradient-bg {
     background: linear-gradient(90deg,#030E3B 0%,#1A1450 25%,#32176A 55%,#4B1D7E 75%,#5C2592 100%);
     color: #fff;
-    padding: 64px 20px 64px 64px;
+    padding: 64px 20px 0px 64px;
 }
 
 .exhibition-section__inner {
@@ -39,8 +39,8 @@
 }
 
 .exhibition-section__card {
-    min-width: 417px;
-    max-width: 420px;
+    min-width: 280px;
+    max-width: 320px;
     scroll-snap-align: center;
     background: linear-gradient(180deg,#DDBFFF 0%,#EDDDFF 100%);
     border-radius: 20px;
@@ -84,8 +84,13 @@
 .exhibition-section__controls {
     display: flex;
     justify-content: center;
+    align-items: start;
     gap: 16px;
-    margin-top: 24px;
+    background-image: url("../images/round.webp");
+    background-repeat: no-repeat;
+    background-size: contain;
+    min-height: 220px;
+    padding-top: 32px;
 }
 
 .exhibition-section__button {
