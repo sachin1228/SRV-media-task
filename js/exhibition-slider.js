@@ -71,22 +71,4 @@ document.addEventListener('DOMContentLoaded', function () {
             scrollToNext();
         }
     });
-
-    let autoPlayId = setInterval(scrollToNext, 6000);
-    const pauseAutoPlay = () => {
-        if (autoPlayId) {
-            clearInterval(autoPlayId);
-            autoPlayId = null;
-        }
-    };
-    const resumeAutoPlay = () => {
-        if (!autoPlayId) {
-            autoPlayId = setInterval(scrollToNext, 6000);
-        }
-    };
-
-    slider.addEventListener('mouseover', pauseAutoPlay);
-    slider.addEventListener('mouseleave', resumeAutoPlay);
-    slider.addEventListener('focusin', pauseAutoPlay);
-    slider.addEventListener('focusout', resumeAutoPlay);
 });
