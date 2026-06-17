@@ -93,8 +93,8 @@ textarea.enquiry-form__input {
 
 /* Font size tweaks */
 @media (max-width: 1440px) {
-    .enquiry-form__title { font-size: 24px; }
-    .enquiry-form__input { font-size: 16px; }
+    .enquiry-form__title { font-size: 18px; }
+    .enquiry-form__input { font-size: 14px; }
 }
 
 @media (max-width: 768px) {
