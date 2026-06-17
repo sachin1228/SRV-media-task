@@ -11,8 +11,19 @@
 .home__column--intro,
 .home__column--gallery,
 .home__column--enquiry {
-    flex: 0 0 33%;
-    max-width: 33%;
+    flex: 0 0 auto;
+    max-width: 100%;
+}
+
+.home__column--intro,
+.home__column--enquiry {
+    flex: 0 0 30%;
+    max-width: 30%;
+}
+
+.home__column--gallery {
+    flex: 0 0 40%;
+    max-width: 40%;
 }
 
 .home__column--intro {
@@ -113,7 +124,7 @@
 
 @media (max-width: 1440px) {
     .home__heading {
-        font-size: 32px;
+        font-size: 30px;
         line-height: 1.2;
     }
     .home__tagline {
@@ -121,7 +132,7 @@
         line-height: 1.2;
     }
     .home__address-label {
-        font-size: 16px;
+        font-size: 14px;
     }
     .home__address-value {
         font-size: 12px;
