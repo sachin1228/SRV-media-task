@@ -209,7 +209,6 @@
 /* Mobile: make controls compact, centered, and remove large background */
 @media (max-width: 480px) {
     .exhibition-section__controls {
-        min-height: auto;
         padding-top: 0;
         padding-bottom: 12px;
     }
@@ -222,7 +221,6 @@
     }
 
     .exhibition-section__controls-inner {
-        top: 55%;
         transform: translate(-50%, -55%);
     }
 
