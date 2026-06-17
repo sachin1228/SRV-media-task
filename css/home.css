@@ -38,7 +38,7 @@
 
 .home__column--enquiry {
     order: 3;
-    padding: 80px 80px 40px;
+    padding: 80px 100px 40px 0;
 }
 
 .home__heading {
@@ -136,6 +136,9 @@
     }
     .home__address-value {
         font-size: 12px;
+    }
+    .home__column--enquiry {
+        padding: 80px 40px 40px;
     }
 }
 
