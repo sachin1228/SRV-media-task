@@ -72,8 +72,34 @@
     }
 }
 
+/* 1440px adjustments: align with navbar horizontal padding */
+@media (max-width: 1440px) {
+    .participating-schools-title {
+        font-size: 28px;
+    }
+    .participating-schools__track {
+        gap: 20px;
+    }
+    .participating-schools__item {
+        width: 240px;
+        padding: 18px;
+    }
+    .participating-schools__logo {
+        height: 100px;
+    }
+}
+
 @media (max-width: 768px) {
+    .participating-schools-title {
+        font-size: 20px;
+    }
     .participating-schools__item {
         width: 100px;
+    }
+    .participating-schools {
+        padding: 48px 16px;
+    }
+    .participating-schools__track {
+        gap: 12px;
     }
 }
