@@ -64,10 +64,6 @@
     .awards {
         padding: 16px 12px;
     }
-    .awards__grid {
-        grid-template-columns: 1fr;
-        gap: 14px;
-    }
     .awards__logo {
         max-width: 140px;
     }
