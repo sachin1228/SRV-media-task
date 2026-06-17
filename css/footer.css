@@ -1,0 +1,162 @@
+.site-footer {
+  background: linear-gradient(180deg, #3f186a 0%, #000e38 100%);
+  padding: 60px 0;
+  color: #fff;
+}
+
+.footer-container {
+  max-width: 1600px;
+  margin: auto;
+  padding: 0 40px;
+  display: grid;
+  grid-template-columns: 220px 1fr 1fr 1fr 260px;
+  gap: 40px;
+  align-items: flex-start;
+}
+
+.footer-brand img {
+  max-width: 180px;
+}
+
+.footer-block {
+  display: flex;
+  gap: 16px;
+}
+
+.footer-icon {
+  width: 48px;
+  height: 48px;
+  background: linear-gradient(59deg, #ddbfff, #edddff);
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.footer-icon img {
+  width: 22px;
+}
+
+.footer-content h4,
+.footer-social h4 {
+  font-size: 18px;
+  margin-bottom: 6px;
+  font-family: "museo_sans700";
+}
+
+.footer-content p {
+  font-size: 16px;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.footer-content a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.footer-content a:hover {
+  opacity: 0.8;
+}
+
+.footer-social .social-list {
+  display: flex;
+  gap: 14px;
+  margin-top: 16px;
+}
+
+.footer-social a {
+  width: 46px;
+  height: 46px;
+  background: linear-gradient(59deg, #ddbfff, #edddff);
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.footer-social img {
+  width: 22px;
+}
+
+.footer-bottom {
+  text-align: center;
+  padding: 18px 12px;
+  font-size: 15px;
+  color: #3f186a;
+  background: #fff;
+}
+
+.mobile-btn {
+  visibility: hidden;
+  height: 0;
+  overflow: hidden;
+}
+
+@media (max-width: 1024px) {
+  .footer-container {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    padding: 0 24px;
+    gap: 24px;
+  }
+
+  .footer-brand,
+  .footer-social {
+    grid-column: span 2;
+  }
+
+  .footer-block {
+    flex-wrap: wrap;
+    align-items: flex-start;
+  }
+}
+
+@media (max-width: 768px) {
+  .site-footer {
+    padding: 40px 0;
+  }
+
+  .footer-container {
+    grid-template-columns: 1fr;
+    padding: 0 20px;
+    gap: 20px;
+  }
+
+  .footer-brand,
+  .footer-block,
+  .footer-social {
+    width: 100%;
+  }
+
+  .footer-icon {
+    width: 40px;
+    height: 40px;
+  }
+
+  .footer-icon img,
+  .footer-social img {
+    width: 18px;
+  }
+
+  .footer-social .social-list {
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  .footer-content h4,
+  .footer-social h4 {
+    font-size: 16px;
+  }
+
+  .footer-content p {
+    font-size: 15px;
+  }
+
+  /* Ensure each footer child stacks vertically and spans full width on narrow screens */
+  .footer-container > * {
+    grid-column: 1 / -1;
+  }
+
+}
