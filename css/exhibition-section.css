@@ -39,8 +39,8 @@
 }
 
 .exhibition-section__card {
-    min-width: 280px;
-    max-width: 320px;
+    width: 360px;
+    flex: 0 0 auto;
     scroll-snap-align: center;
     background: linear-gradient(180deg,#DDBFFF 0%,#EDDDFF 100%);
     border-radius: 20px;
@@ -94,7 +94,7 @@
 }
 
 .exhibition-section__button {
-    border: 1px solid rgba(255,255,255,0.3);
+    border: 2px solid #fff;
     background: transparent;
     color: #fff;
     padding: 12px;
@@ -108,7 +108,8 @@
 
 .exhibition-section__button:hover,
 .exhibition-section__button:focus-visible {
-    background: rgba(255,255,255,0.1);
+    background: #fff;
+    color: #5C2592;
     border-color: rgba(255,255,255,0.6);
 }
 
@@ -135,8 +136,9 @@
 
 @media (max-width: 768px) {
     .exhibition-section__card {
-        min-width: 100%;
-        max-width: 100%;
+        min-width: 280px;
+        max-width: 320px;
+        width: min(320px, 100%);
     }
 }
 
