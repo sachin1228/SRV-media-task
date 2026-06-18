@@ -5,6 +5,7 @@
   max-width: 100%;
   display: flex;
   align-items: center;
+  padding: 120px 80px;
   background: linear-gradient(90deg,
       rgba(230, 210, 255, 0.95) 0%,
       rgba(230, 210, 255, 0.75) 40%,
@@ -15,8 +16,7 @@
 }
 
 .appointment__content {
-  padding: 120px 80px;
-  width: 50%;
+  max-width: 560px;
 }
 
 .appointment__eyebrow {
@@ -116,7 +116,7 @@
 }
 
 @media (max-width: 1440px) {
-  .appointment__content {
+  .appointment {
     padding: 100px 60px;
   }
 
