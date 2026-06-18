@@ -9,26 +9,33 @@
     var cards = Array.prototype.slice.call(track.children);
     var total = cards.length;
     var currentIndex = 0;
-    var autoplayDelay = 3500; // ms between auto-advances
+    var autoplayDelay = 3500;
     var autoplayTimer = null;
-    var gap = 16; // matches CSS gap on .exhibition-section__track
+    var gap = 16;
 
     function getStep() {
-        // Card width + gap, recalculated on demand so it stays correct on resize
-        var cardRect = cards[0].getBoundingClientRect();
-        return cardRect.width + gap;
+        return cards[0].getBoundingClientRect().width + gap;
+    }
+
+    function getVisibleWidth() {
+        var styles = getComputedStyle(viewport);
+        var paddingLeft = parseFloat(styles.paddingLeft) || 0;
+        var paddingRight = parseFloat(styles.paddingRight) || 0;
+
+        return viewport.clientWidth - paddingLeft - paddingRight;
+    }
+
+    function getMaxOffset() {
+        return Math.max(0, track.scrollWidth - getVisibleWidth());
     }
 
     function getMaxIndex() {
-        // Furthest index where the track can still fully show the last card
-        var viewportWidth = viewport.getBoundingClientRect().width;
-        var step = getStep();
-        var visibleCount = Math.max(1, Math.floor((viewportWidth + gap) / step));
-        return Math.max(0, total - visibleCount);
+        return Math.ceil(getMaxOffset() / getStep());
     }
 
     function updateButtons() {
         var maxIndex = getMaxIndex();
+
         prevBtn.disabled = currentIndex <= 0;
         nextBtn.disabled = currentIndex >= maxIndex;
     }
@@ -44,8 +51,12 @@
         }
 
         currentIndex = index;
+
         var offset = currentIndex * getStep();
-        track.style.transform = 'translateX(-' + offset + 'px)';
+        offset = Math.min(offset, getMaxOffset());
+
+        track.style.transform = "translateX(-" + offset + "px)";
+
         updateButtons();
     }
 
@@ -59,14 +70,15 @@
 
     function startAutoplay() {
         stopAutoplay();
-        autoplayTimer = window.setInterval(function () {
+
+        autoplayTimer = setInterval(function () {
             next({ loop: true });
         }, autoplayDelay);
     }
 
     function stopAutoplay() {
         if (autoplayTimer) {
-            window.clearInterval(autoplayTimer);
+            clearInterval(autoplayTimer);
             autoplayTimer = null;
         }
     }
@@ -76,31 +88,33 @@
         startAutoplay();
     }
 
-    prevBtn.addEventListener('click', function () {
+    prevBtn.addEventListener("click", function () {
         prev({ loop: true });
         restartAutoplay();
     });
 
-    nextBtn.addEventListener('click', function () {
+    nextBtn.addEventListener("click", function () {
         next({ loop: true });
         restartAutoplay();
     });
 
-    // Pause on hover/focus, resume when the user moves away
-    viewport.addEventListener('mouseenter', stopAutoplay);
-    viewport.addEventListener('mouseleave', startAutoplay);
-    viewport.addEventListener('focusin', stopAutoplay);
-    viewport.addEventListener('focusout', startAutoplay);
-    viewport.addEventListener('touchstart', stopAutoplay, { passive: true });
-    viewport.addEventListener('touchend', startAutoplay, { passive: true });
+    viewport.addEventListener("mouseenter", stopAutoplay);
+    viewport.addEventListener("mouseleave", startAutoplay);
 
-    // Keyboard navigation when the carousel region has focus
-    viewport.addEventListener('keydown', function (e) {
-        if (e.key === 'ArrowRight') {
+    viewport.addEventListener("focusin", stopAutoplay);
+    viewport.addEventListener("focusout", startAutoplay);
+
+    viewport.addEventListener("touchstart", stopAutoplay, { passive: true });
+    viewport.addEventListener("touchend", startAutoplay, { passive: true });
+
+    viewport.addEventListener("keydown", function (e) {
+        if (e.key === "ArrowRight") {
             e.preventDefault();
             next({ loop: true });
             restartAutoplay();
-        } else if (e.key === 'ArrowLeft') {
+        }
+
+        if (e.key === "ArrowLeft") {
             e.preventDefault();
             prev({ loop: true });
             restartAutoplay();
@@ -108,16 +122,18 @@
     });
 
     var resizeTimer;
-    window.addEventListener('resize', function () {
+
+    window.addEventListener("resize", function () {
         clearTimeout(resizeTimer);
+
         resizeTimer = setTimeout(function () {
-            // Re-clamp current index in case fewer/more cards now fit
             goTo(Math.min(currentIndex, getMaxIndex()));
         }, 150);
     });
 
-    var prefersReducedMotion = window.matchMedia &&
-        window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    var prefersReducedMotion =
+        window.matchMedia &&
+        window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
     updateButtons();
 
