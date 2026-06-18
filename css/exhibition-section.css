@@ -1,7 +1,7 @@
 .exhibition-section-gradient-bg {
     background: linear-gradient(360deg,#030E3B 0%,#1A1450 25%,#32176A 55%,#4B1D7E 75%,#5C2592 100%);
     color: #fff;
-    padding: 64px 20px 0px 64px;
+    padding-top: 64px;
 }
 
 .exhibition-section__inner {
@@ -33,10 +33,11 @@
     scroll-behavior: smooth;
     max-width: 1920px;
     margin: 0 auto;
+    padding: 0 80px;
 }
 
 .exhibition-section__slider:focus {
-    outline: 3px solid rgba(255,255,255,0.6);
+    outline: 1px solid rgba(255,255,255,0.6);
     outline-offset: 6px;
 }
 
@@ -177,7 +178,6 @@
 
 @media (max-width: 768px) {
     .exhibition-section-gradient-bg {
-        padding-left: 16px;
         padding-right: 16px;
         padding-top: 48px;
         padding-bottom: 0;
@@ -198,6 +198,9 @@
     .exhibition-section__card-text {
         font-size: 13px;
     }
+    .exhibition-section__slider {
+        padding: 0 60px;
+    }
 }
 
 @media (max-width: 768px) {
@@ -209,6 +212,9 @@
     }
     .exhibition-section__card-text {
         font-size: 13px;
+    }
+    .exhibition-section__slider {
+        padding: 0 40px;
     }
 }
 
@@ -241,5 +247,8 @@
     .exhibition-section__button svg {
         width: 18px;
         height: 18px;
+    }
+    .exhibition-section__slider {
+        padding: 0 16px;
     }
 }
