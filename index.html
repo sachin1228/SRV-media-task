@@ -468,6 +468,7 @@
                             aria-roledescription="carousel"
                             aria-label="Exhibition highlights carousel"
                             tabindex="0">
+                            <div class="exhibition-section__track" id="exhibitionTrack">
                             <div class="exhibition-section__card" role="group" aria-roledescription="slide" aria-label="Highlight 1 of 6">
                                 <div class="exhibition-section__icon" aria-hidden="true">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 80 80" fill="none">
@@ -640,18 +641,19 @@
                                     <p class="exhibition-section__card-text">Speak directly with school advisors during the live exhibition.</p>
                                 </div>
                             </div>
+                            </div>
                         </div>
                     </div>
                 </div>
                 <div class="exhibition-section__controls">
                     <div class="exhibition-section__controls-bg" aria-hidden="true"></div>
                     <div class="exhibition-section__controls-inner">
-                        <button class="exhibition-section__button exhibition-section__button--prev" type="button" aria-label="Previous highlight">
+                        <button class="exhibition-section__button exhibition-section__button--prev" type="button" aria-label="Previous highlight" id="exhibitionPrevBtn">
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
                                 <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5 3 12m0 0 7.5-7.5M3 12h18" />
                             </svg>
                         </button>
-                        <button class="exhibition-section__button exhibition-section__button--next" type="button" aria-label="Next highlight">
+                        <button class="exhibition-section__button exhibition-section__button--next" type="button" aria-label="Next highlight" id="exhibitionNextBtn">
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
                                 <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5m7.5-7.5h-15" />
                             </svg>
@@ -660,6 +662,7 @@
                 </div>
             </div>
         </section>
+
     </main>
 
     <footer class="site-footer">
