@@ -5,6 +5,8 @@
 .home__content {
     display: flex;
     flex-direction: row;
+    max-width: 1920px;
+    margin: 0 auto;
 }
 
 .home__column,
