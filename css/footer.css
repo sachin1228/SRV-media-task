@@ -5,11 +5,12 @@
 }
 
 .footer-container {
-  max-width: 1600px;
+  max-width: 1840px;
   margin: auto;
   padding: 0 40px;
   display: grid;
-  grid-template-columns: 220px 1fr 1fr 1fr 260px;
+  /* Fourth column (call block) fixed to 10%, remaining columns equal */
+  grid-template-columns: 1fr 1fr 1fr 15% 1fr;
   gap: 40px;
   align-items: flex-start;
 }
@@ -92,6 +93,15 @@
   visibility: hidden;
   height: 0;
   overflow: hidden;
+}
+
+@media (max-width: 1440px) {
+  .footer-content p {
+    font-size: 12px;
+  }
+  .footer-content h4, .footer-social h4 {
+    font-size: 14px;
+  }
 }
 
 @media (max-width: 1024px) {
