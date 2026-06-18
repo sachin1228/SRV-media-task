@@ -22,18 +22,13 @@
     color: #fff;
 }
 
-
+/* Viewport: clips the track, no native scrolling/overflow-x-auto anymore */
 .exhibition-section__slider {
-    display: flex;
-    gap: 16px;
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
-    -webkit-overflow-scrolling: touch;
-    padding-bottom: 8px;
-    scroll-behavior: smooth;
+    overflow: hidden;
     max-width: 1920px;
     margin: 0 auto;
     padding: 0 80px;
+    overflow-x: auto;
 }
 
 .exhibition-section__slider:focus {
@@ -41,10 +36,22 @@
     outline-offset: 6px;
 }
 
+/* Track: the element we actually translate via JS, one card at a time */
+.exhibition-section__track {
+    display: flex;
+    gap: 16px;
+    will-change: transform;
+    transition: transform 0.5s ease;
+}
+
+.exhibition-section__track.is-dragging,
+.exhibition-section__track.no-transition {
+    transition: none;
+}
+
 .exhibition-section__card {
     width: 360px;
     flex: 0 0 auto;
-    scroll-snap-align: center;
     background: linear-gradient(180deg,#DDBFFF 0%,#EDDDFF 100%);
     border-radius: 20px;
     padding: 24px;
@@ -117,6 +124,11 @@
     border-color: rgba(255,255,255,0.6);
 }
 
+.exhibition-section__button:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+}
+
 .exhibition-section__button svg {
     width: 24px;
     height: 24px;
@@ -125,8 +137,8 @@
 
 /* Respect reduced motion */
 @media (prefers-reduced-motion: reduce) {
-    .exhibition-section__slider {
-        scroll-behavior: auto !important;
+    .exhibition-section__track {
+        transition: none !important;
     }
 
     .exhibition-section__card {

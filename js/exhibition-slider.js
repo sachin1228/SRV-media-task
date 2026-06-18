@@ -1,74 +1,127 @@
-document.addEventListener('DOMContentLoaded', function () {
-    const slider = document.querySelector('.exhibition-section__slider');
-    const prevButton = document.querySelector('.exhibition-section__button--prev');
-    const nextButton = document.querySelector('.exhibition-section__button--next');
-    if (!slider || !prevButton || !nextButton) return;
+(function () {
+    var viewport = document.querySelector('.exhibition-section__slider');
+    var track = document.getElementById('exhibitionTrack');
+    var prevBtn = document.getElementById('exhibitionPrevBtn');
+    var nextBtn = document.getElementById('exhibitionNextBtn');
 
-    // Create aria-live announcement region
-    const liveRegion = document.createElement('div');
-    liveRegion.setAttribute('aria-live', 'polite');
-    liveRegion.setAttribute('aria-atomic', 'true');
-    liveRegion.className = 'sr-only';
-    document.body.appendChild(liveRegion);
+    if (!viewport || !track || !prevBtn || !nextBtn) return;
 
-    const cards = Array.from(slider.querySelectorAll('.exhibition-section__card'));
-    const totalSlides = cards.length;
+    var cards = Array.prototype.slice.call(track.children);
+    var total = cards.length;
+    var currentIndex = 0;
+    var autoplayDelay = 3500; // ms between auto-advances
+    var autoplayTimer = null;
+    var gap = 16; // matches CSS gap on .exhibition-section__track
 
-    const getActiveIndex = () => {
-        const viewportLeft = slider.scrollLeft;
-        const viewportRight = viewportLeft + slider.clientWidth;
-        let activeIndex = 0;
-        let maxVisibleWidth = -1;
+    function getStep() {
+        // Card width + gap, recalculated on demand so it stays correct on resize
+        var cardRect = cards[0].getBoundingClientRect();
+        return cardRect.width + gap;
+    }
 
-        cards.forEach((card, index) => {
-            const cardLeft = card.offsetLeft;
-            const cardRight = cardLeft + card.clientWidth;
-            const visibleWidth = Math.max(0, Math.min(cardRight, viewportRight) - Math.max(cardLeft, viewportLeft));
+    function getMaxIndex() {
+        // Furthest index where the track can still fully show the last card
+        var viewportWidth = viewport.getBoundingClientRect().width;
+        var step = getStep();
+        var visibleCount = Math.max(1, Math.floor((viewportWidth + gap) / step));
+        return Math.max(0, total - visibleCount);
+    }
 
-            if (visibleWidth > maxVisibleWidth) {
-                maxVisibleWidth = visibleWidth;
-                activeIndex = index;
-            }
-        });
+    function updateButtons() {
+        var maxIndex = getMaxIndex();
+        prevBtn.disabled = currentIndex <= 0;
+        nextBtn.disabled = currentIndex >= maxIndex;
+    }
 
-        return activeIndex;
-    };
+    function goTo(index, opts) {
+        var maxIndex = getMaxIndex();
+        var loop = opts && opts.loop;
 
-    const scrollToIndex = (index) => {
-        const card = cards[index];
-        if (!card) return;
+        if (index > maxIndex) {
+            index = loop ? 0 : maxIndex;
+        } else if (index < 0) {
+            index = loop ? maxIndex : 0;
+        }
 
-        card.scrollIntoView({ behavior: 'smooth', inline: 'start', block: 'nearest' });
-    };
+        currentIndex = index;
+        var offset = currentIndex * getStep();
+        track.style.transform = 'translateX(-' + offset + 'px)';
+        updateButtons();
+    }
 
-    const announceSlide = (direction) => {
-        const currentSlide = getActiveIndex() + 1;
-        liveRegion.textContent = `Exhibition highlight ${currentSlide} of ${totalSlides}, ${direction}`;
-    };
+    function next(opts) {
+        goTo(currentIndex + 1, opts);
+    }
 
-    const scrollToPrevious = () => {
-        const currentIndex = getActiveIndex();
-        scrollToIndex(Math.max(0, currentIndex - 1));
-        announceSlide('previous');
-    };
+    function prev(opts) {
+        goTo(currentIndex - 1, opts);
+    }
 
-    const scrollToNext = () => {
-        const currentIndex = getActiveIndex();
-        scrollToIndex(Math.min(totalSlides - 1, currentIndex + 1));
-        announceSlide('next');
-    };
+    function startAutoplay() {
+        stopAutoplay();
+        autoplayTimer = window.setInterval(function () {
+            next({ loop: true });
+        }, autoplayDelay);
+    }
 
-    prevButton.addEventListener('click', scrollToPrevious);
-    nextButton.addEventListener('click', scrollToNext);
+    function stopAutoplay() {
+        if (autoplayTimer) {
+            window.clearInterval(autoplayTimer);
+            autoplayTimer = null;
+        }
+    }
 
-    // Keyboard navigation
-    slider.addEventListener('keydown', (e) => {
-        if (e.key === 'ArrowLeft') {
+    function restartAutoplay() {
+        stopAutoplay();
+        startAutoplay();
+    }
+
+    prevBtn.addEventListener('click', function () {
+        prev({ loop: true });
+        restartAutoplay();
+    });
+
+    nextBtn.addEventListener('click', function () {
+        next({ loop: true });
+        restartAutoplay();
+    });
+
+    // Pause on hover/focus, resume when the user moves away
+    viewport.addEventListener('mouseenter', stopAutoplay);
+    viewport.addEventListener('mouseleave', startAutoplay);
+    viewport.addEventListener('focusin', stopAutoplay);
+    viewport.addEventListener('focusout', startAutoplay);
+    viewport.addEventListener('touchstart', stopAutoplay, { passive: true });
+    viewport.addEventListener('touchend', startAutoplay, { passive: true });
+
+    // Keyboard navigation when the carousel region has focus
+    viewport.addEventListener('keydown', function (e) {
+        if (e.key === 'ArrowRight') {
             e.preventDefault();
-            scrollToPrevious();
-        } else if (e.key === 'ArrowRight') {
+            next({ loop: true });
+            restartAutoplay();
+        } else if (e.key === 'ArrowLeft') {
             e.preventDefault();
-            scrollToNext();
+            prev({ loop: true });
+            restartAutoplay();
         }
     });
-});
+
+    var resizeTimer;
+    window.addEventListener('resize', function () {
+        clearTimeout(resizeTimer);
+        resizeTimer = setTimeout(function () {
+            // Re-clamp current index in case fewer/more cards now fit
+            goTo(Math.min(currentIndex, getMaxIndex()));
+        }, 150);
+    });
+
+    var prefersReducedMotion = window.matchMedia &&
+        window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    updateButtons();
+
+    if (!prefersReducedMotion) {
+        startAutoplay();
+    }
+})();
