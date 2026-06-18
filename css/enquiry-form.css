@@ -61,18 +61,16 @@ textarea.enquiry-form__input {
     resize: vertical;
 }
 
-@media (max-width: 1439px) {
+
+@media (max-width: 1440px) {
+    .enquiry-form {
+        justify-content: center;
+    }
     .enquiry-form__title {
         font-size: 18px;
     }
     .enquiry-form__input {
         font-size: 14px;
-    }
-}
-
-@media (max-width: 1440px) {
-    .enquiry-form {
-        justify-content: center;
     }
     .enquiry-form__inner {
         padding-left: 32px;
@@ -81,6 +79,8 @@ textarea.enquiry-form__input {
     .enquiry-form__submit { 
         height: 40px; 
     }
+    .enquiry-form__title { font-size: 18px; }
+    .enquiry-form__input { font-size: 14px; }
 }
 
 @media (max-width: 768px) {
@@ -92,19 +92,10 @@ textarea.enquiry-form__input {
         padding: 20px;
         border-radius: 8px;
     }
-}
-
-/* Font size tweaks */
-@media (max-width: 1440px) {
-    .enquiry-form__title { font-size: 18px; }
-    .enquiry-form__input { font-size: 14px; }
-    
-}
-
-@media (max-width: 768px) {
     .enquiry-form__title { font-size: 20px; }
     .enquiry-form__input { font-size: 14px; }
 }
+
 
 .enquiry-form__actions {
     display: flex;
