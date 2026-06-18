@@ -78,6 +78,9 @@ textarea.enquiry-form__input {
         padding-left: 32px;
         padding-right: 32px;
     }
+    .enquiry-form__submit { 
+        height: 40px; 
+    }
 }
 
 @media (max-width: 768px) {
@@ -95,6 +98,7 @@ textarea.enquiry-form__input {
 @media (max-width: 1440px) {
     .enquiry-form__title { font-size: 18px; }
     .enquiry-form__input { font-size: 14px; }
+    
 }
 
 @media (max-width: 768px) {
