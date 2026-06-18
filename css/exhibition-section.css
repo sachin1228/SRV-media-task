@@ -90,6 +90,7 @@
     overflow: visible;
     min-height: 220px;
     padding-top: 0;
+    margin-top: -1px;
     padding-bottom: 16px;
 }
 
@@ -150,7 +151,7 @@
     width: 100%;
     aspect-ratio: 16 / 5; /* wide banner */
     min-height: 132px;
-    height: 132px;
+    height: 190px;
     background-image: url("../images/round.webp");
     background-repeat: no-repeat;
     background-position: center;
@@ -183,6 +184,9 @@
 
 /* Font size adjustments for exhibition */
 @media (max-width: 1440px) {
+    .exhibition-section__controls-bg {
+        height: 132px;
+    }
     .exhibition-section__title {
         font-size: 28px;
     }
