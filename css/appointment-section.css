@@ -10,8 +10,7 @@
       rgba(230, 210, 255, 0.95) 0%,
       rgba(230, 210, 255, 0.75) 40%,
       rgba(230, 210, 255, 0.2) 60%,
-      rgba(230, 210, 255, 0) 100%),
-    url("../images/schdule-bg.webp") no-repeat center right;
+      rgba(230, 210, 255, 0) 100%);
   background-size: cover;
 }
 
